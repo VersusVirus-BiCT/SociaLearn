@@ -1,27 +1,99 @@
-# SociaLearn
+# Workshop Manager-Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Here lives an application made to offer workshops to students. It environment alowes it to save stuff in a database and to send mails to the users when needed.
 
-## Development server
+# Need to know
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## i18n
+For the translation of this site, we are using **ngx-translate**. It is easy to use and easy to extend.
 
-## Code scaffolding
+For more Information click [HERE](https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular8-app-with-ngx-translate).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Styles
+For our styles, we are going to use [Angular Material](https://material.angular.io/) and [PrimeNG](https://primefaces.org/primeng/#/).
 
-## Build
+## Icons
+The icons that we're going to use, we will be relying on [Angular Material](https://material.angular.io/) and [PrimeNG](https://primefaces.org/primeng/#/).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Angular project structure & commands
+In the folder src/app, there are seven folders.
 
-## Running unit tests
+## Components
+In this folder, there are only components, that don't belong to a specific apge. <br>An example would be the navigation. <br>
+**example command:**
+```bash
+ng g c  [path]/[name]
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Directives
+Every created directive is stored in this folder. <br>
+**example command:**
+```bash
+ng g directive  [path]/[name]/[name]
+```
 
-## Running end-to-end tests
+## Interfaces
+All the created interface are stored in this folder. <br>
+**example command:**
+```bash
+ng g interface [path]/[name]
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Modules
+In this folder all the custom modules are stored. <br>
+**example command:**
+```bash
+ng g module [path]/[name]
+```
 
-## Further help
+## Pages
+In this folder all the pages are stored. <br>
+Because we are lazy loading the pages, we can't just create a component.<br>
+**example:**
+```bash
+ng generate module pages/[name] --route  [url] --module app.module
+```
+This command will generate a component with an module and a routing Module, that is lazy loaded.<br>
+The `[url]` placeholder is the URL, that will be used to navigate to the page.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Pipes
+In this folder all if our custom pipes will be stored in this folder. <br>
+**example:**
+```bash
+ng g pipe  [path]/[name]
+```
+
+## Services
+In this folder all services will be stored.<br>
+**example:**
+```bash
+ng g s  [path]/[name]/[name]
+```
+
+## NPM Commands
+**Normally:**
+```bash
+npm start
+```
+
+## Build development
+```bash
+npm build
+```
+
+## Build productive
+```bash
+npm build-prod
+```
+## Translation
+We're using [ngx-translate](https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular8-app-with-ngx-translate).
+For every lazyloaded page just import the custom TranslationModule and you're good to go. <br> <br>
+For outputing the text, write the HTML like shown below:
+```html
+<h1>{{ 'demo.title' | translate }}</h1>
+```
+
+
+## [Theming](https://materialtheme.arcsine.dev/)
+
+### A Versus Virus Hackaton Project

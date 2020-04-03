@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'sl-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'SociaLearn';
+  
+
+  constructor
+  (
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('de');
+  }
 }
