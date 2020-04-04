@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://my-json-server.typicode.com/VersusVirus-BiCT/demo/'
+  API_URL: 'http://localhost:3000'
 };
 
 /*
