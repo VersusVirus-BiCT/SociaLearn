@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {TaskGroupService} from "../service/task-group.service";
+import {SolutionOption} from "../model/solution-option";
 
 @Component({
   selector: 'sl-tasks',
@@ -11,6 +12,10 @@ export class TasksComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, public readonly taskService: TaskGroupService) {
     this.taskService.loadTaskGroup(parseInt(this.route.snapshot.paramMap.get('id')));
+  }
+
+  public castSolutionOption(element: any): SolutionOption[]{
+    return element;
   }
 
   ngOnInit(): void {

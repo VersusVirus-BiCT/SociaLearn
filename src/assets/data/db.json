@@ -39,8 +39,8 @@
             "points": 1,
             "type": {
               "id": 1,
-              "name": "Multiply Choice",
-              "solutionType" : "array"
+              "name": "Multiple Choice",
+              "solutionType" : "checkbox"
             }
           },
           {
@@ -57,7 +57,7 @@
             "type": {
               "id": 2,
               "name": "Single Choice",
-              "solutionType" : "array"
+              "solutionType" : "select"
             }
           },
           {
@@ -69,7 +69,8 @@
             "points": 1,
             "type": {
               "id": 3,
-              "name": "Number"
+              "name": "Number",
+              "solutionType": "text"
             }
           }
         ]
@@ -88,7 +89,8 @@
             "points": 1,
             "type": {
               "id": 4,
-              "name": "Text"
+              "name": "Text",
+              "solutionType": "text"
             }
           },
           {
@@ -100,7 +102,8 @@
             "points": 1,
             "type": {
               "id": 4,
-              "name": "Text"
+              "name": "Text",
+              "solutionType": "radio"
             }
           },
           {
@@ -108,11 +111,16 @@
             "name": "Java Prinzipien",
             "description": "Beantworte die Frage",
             "question": "Wofür steht OO",
-            "solution": "OO ist ein Paradigma welches Reale Objekte in Klassen gliedert",
+            "solution": [
+              {"id": 1, "value": "A", "correct": true},
+              {"id": 2, "value": "B", "correct": false},
+              {"id": 3, "value": "C", "correct": false}
+            ],
             "points": 1,
             "type": {
               "id": 4,
-              "name": "Text"
+              "name": "Text",
+              "solutionType": "select"
             }
           }
         ]
