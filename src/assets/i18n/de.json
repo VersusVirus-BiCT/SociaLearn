@@ -1,3 +1,6 @@
 {
-    "test": "Hallo ich bin ein Material Knopf in {{ page }} geschrieben in Deutsch"
+    "test": "Hallo ich bin ein Material Knopf in {{ page }} geschrieben in Deutsch",
+    "task": {
+      "title": "Aufgaben"
+    }
 }
