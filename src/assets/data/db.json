@@ -98,7 +98,11 @@
             "name": "Java Keywords",
             "description": "Beantworte die Frage",
             "question": "Was bedeutet static",
-            "solution": "Verwendung von Variablen oder Methoden auf Klassenebene",
+            "solution": [
+              {"id": 1, "value": "A", "correct": true},
+              {"id": 2, "value": "B", "correct": false},
+              {"id": 3, "value": "C", "correct": false}
+            ],
             "points": 1,
             "type": {
               "id": 4,

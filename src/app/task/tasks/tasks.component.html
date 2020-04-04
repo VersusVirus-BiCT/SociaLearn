@@ -21,6 +21,9 @@
         <div *ngIf="task.type.solutionType == 'checkbox'">
           <mat-checkbox *ngFor="let option of castSolutionOption(task.solution)" value="{{option.id}}">{{option.value}}</mat-checkbox>
         </div>
+        <mat-radio-group *ngIf="task.type.solutionType == 'radio'">
+          <mat-radio-button *ngFor="let option of castSolutionOption(task.solution)" value="{{option.id}}">{{option.value}}</mat-radio-button>
+        </mat-radio-group>
       </mat-card-actions>
       <mat-card-footer>
         <mat-icon svgIcon="correct"></mat-icon>
