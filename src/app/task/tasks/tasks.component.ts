@@ -13,7 +13,7 @@ export class TasksComponent implements OnInit {
     this.taskService.loadTaskGroup(parseInt(this.route.snapshot.paramMap.get('id')));
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

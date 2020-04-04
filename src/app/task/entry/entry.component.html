@@ -1,22 +1,29 @@
-<div *ngIf="taskGroupService.taskGroup$ | async; let taskGroup">
-  <h1>{{ (user.role == "teacher") ? "Erfassung: " : "" }}{{ taskGroup.purpose }}</h1>
+<h1>{{ (user.role == "teacher") ? "Erfassung: " : "" }}{{ taskGroup.purpose }}</h1>
 
-  <mat-card *ngFor="let task of taskGroup.tasks">
-    <mat-card-title>{{ task.name }}</mat-card-title>
-    <mat-card-subtitle>
-      {{ task.type.name }}
-    </mat-card-subtitle>
-    <mat-card-content *ngIf="task.type.name == 'Single Choice'">
-      Fill in single Choice!
-    </mat-card-content>
-    <mat-card-content *ngIf="task.type.name == 'Multiply Choice'">
-      Fill in Multiply Choice!
-    </mat-card-content>
-    <mat-card-content *ngIf="task.type.name == 'Text'">
-      Fill in Text!
-    </mat-card-content>
-    <mat-card-content *ngIf="task.type.name == 'Number'">
-      Fill in Number!
-    </mat-card-content>
-  </mat-card>
-</div>
+<mat-card *ngFor="let task of taskGroup.tasks">
+  <mat-card-title>{{ task.name }}</mat-card-title>
+  <mat-card-subtitle>
+    {{ task.type.name }}
+  </mat-card-subtitle>
+  <mat-form-field >
+    <mat-label>Frage eingeben:</mat-label>
+    <input type="text" matInput placeholder="Text eingeben" [ngModel]="task.question"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Antwort-Typ:</mat-label>
+    <mat-select (ngModelChange)="taskTypeChange($event, task)" [(ngModel)]="task.type.id">
+      <mat-option *ngFor="let type of taskTypes" [value]="type.id">
+        {{type.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="task.type.name == 'Text'" >
+    <mat-label>Lösung eingeben:</mat-label>
+    <input type="text" matInput placeholder="Text eingeben" [ngModel]="task.solution"/>
+  </mat-form-field>
+  <mat-form-field *ngIf="task.type.name == 'Number'" >
+    <mat-label>Lösung eingeben:</mat-label>
+    <input type="number" matInput placeholder="Nummer eingeben" [ngModel]="task.solution"/>
+  </mat-form-field>
+</mat-card>
