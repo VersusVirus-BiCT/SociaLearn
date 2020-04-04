@@ -8,6 +8,34 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #dfe2f6;
+}
+
+main{
+  padding-top: 100px !important;
+}
+
+main h1 {
+  text-transform: uppercase;
+  color: whitesmoke;
+  border-bottom: 2px solid whitesmoke;
+  font-size: 3em !important;
+  padding-bottom: 15px;
+}
+
+.icon-2x {
+  transform: scale(2);
+}
+
+.logo {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+mat-card-footer{
+  padding-left: 10px;
+  padding-bottom: 5px;
 }
 
 .row {
