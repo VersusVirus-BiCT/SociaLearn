@@ -18,12 +18,24 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field *ngIf="task.type.name == 'Text'" >
+  <mat-form-field *ngIf="task.type.solutionType == 'text'" >
     <mat-label>Lösung eingeben:</mat-label>
     <input type="text" matInput placeholder="Text eingeben" [ngModel]="task.solution"/>
   </mat-form-field>
-  <mat-form-field *ngIf="task.type.name == 'Number'" >
-    <mat-label>Lösung eingeben:</mat-label>
-    <input type="number" matInput placeholder="Nummer eingeben" [ngModel]="task.solution"/>
-  </mat-form-field>
+  <div *ngIf="task.type.solutionType == 'radio' || task.type.solutionType == 'checkbox' || task.type.solutionType == 'select'" >
+    <p>Felder verwalten</p>
+    <div *ngFor="let solution of task.solution">
+      <mat-form-field>
+        <mat-label>Feldwert:</mat-label>
+        <input matInput [ngModel]="solution.value">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Ist richtig?</mat-label>
+        <mat-select [ngModel]="solution.correct+''">
+          <mat-option value="true">Ja</mat-option>
+          <mat-option value="false">Nein</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
 </mat-card>
