@@ -1,32 +1,38 @@
 <div *ngIf="taskService.taskGroup$ | async; let taskgrp">
   <h1>{{taskgrp.title}}</h1>
   <div class="flexbox">
-    <mat-card *ngFor="let task of taskgrp.tasks">
+    <mat-card *ngFor="let task of taskgrp.tasks; let i = index">
       <mat-card-title>{{task.name}}</mat-card-title>
       <mat-card-content>
         <p><mat-icon>school</mat-icon>{{task.description}}</p>
         {{task.question}}
       </mat-card-content>
       <mat-card-actions>
-        <mat-form-field *ngIf="task.type.solutionType == 'text'">
+        <mat-form-field *ngIf="task.type.solutionType == 'text'" >
           <mat-label>{{'tasks.answer.text' | translate}}</mat-label>
-          <input matInput placeholder="{{'tasks.answer.text' | translate}}">
+          <input matInput [(ngModel)]="answer[i]"  placeholder="{{'tasks.answer.text' | translate}}">
         </mat-form-field>
         <mat-form-field *ngIf="task.type.solutionType == 'select'">
           <mat-label>{{'tasks.answer.select' | translate}}</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="answer[i]"  >
             <mat-option *ngFor="let option of castSolutionOption(task.solution)" value="{{option.id}}">{{option.value}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <div *ngIf="task.type.solutionType == 'checkbox'">
-          <mat-checkbox *ngFor="let option of castSolutionOption(task.solution)" value="{{option.id}}">{{option.value}}</mat-checkbox>
-        </div>
-        <mat-radio-group *ngIf="task.type.solutionType == 'radio'">
+        <mat-form-field *ngIf="task.type.solutionType == 'checkbox'">
+          <!--<mat-checkbox [(ngModel)]="answer[i]" *ngFor="let option of castSolutionOption(task.solution)" value="{{option.id}}">{{option.value}}</mat-checkbox>-->
+          <mat-label>{{'tasks.answer.checkbox' | translate}}</mat-label>
+          <mat-select [(ngModel)]="answer[i]" multiple>
+            <mat-option *ngFor="let option of castSolutionOption(task.solution)" value="{{option.id}}">{{option.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-radio-group [(ngModel)]="answer[i]"  *ngIf="task.type.solutionType == 'radio'">
           <mat-radio-button *ngFor="let option of castSolutionOption(task.solution)" value="{{option.id}}">{{option.value}}</mat-radio-button>
         </mat-radio-group>
       </mat-card-actions>
       <mat-card-footer>
-        <mat-icon svgIcon="correct"></mat-icon>
+        <mat-icon *ngIf="correct[i] != undefined && correct[i]==false">error</mat-icon>
+        <mat-icon *ngIf="correct[i] != undefined && correct[i]==true">check-circle-outline</mat-icon>
+        <mat-icon svgIcon="correct" (click)="checkAnswer(task, i)"></mat-icon>
       </mat-card-footer>
     </mat-card>
   </div>
