@@ -29,7 +29,7 @@
             ],
             "styles": [
               "src/assets/themes/bict-theme.scss",
-              "src/styles.scss"
+              "src/assets/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -94,7 +94,7 @@
             ],
             "styles": [
               "src/assets/themes/bict-theme.scss",
-              "src/styles.scss"
+              "src/assets/styles/styles.scss"
             ],
             "scripts": []
           }

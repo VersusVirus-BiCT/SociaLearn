@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.start {
+  justify-content: start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.end {
+  justify-content: end;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+button {
+  cursor: pointer;
+}
+
+@for $i from 1 through 100 {
+  .width-#{$i} {
+    width: 1% * $i;
+  }
+
+  .height-#{$i} {
+      height: 1% * $i;
+  }
+
+  .pad-#{$i} {
+      padding: 1px * $i;
+  }
+
+  .pad-left-#{$i} {
+    padding-left: 1px * $i;
+  }
+
+  .pad-right-#{$i} {
+    padding-right: 1px * $i;
+  }
+
+  .pad-bottom-#{$i} {
+    padding-bottom: 1px * $i;
+  }
+
+  .pad-top-#{$i} {
+    padding-top: 1px * $i;
+  }
+
+  .flex-grow-#{$i} {
+      flex-grow: 1 * $i;
+      box-sizing: border-box;
+  }
+
+  .mar-#{$i} {
+    margin: 1px * $i;
+  }
+
+  .mar-bottom-#{$i} {
+      margin-bottom: 1px * $i;
+  }
+
+  .mar-top-#{$i} {
+      margin-top: 1px * $i;
+  }
+
+  .mar-left-#{$i} {
+      margin-left: 1px * $i;
+  }
+}
