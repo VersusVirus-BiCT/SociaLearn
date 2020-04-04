@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TaskGroup} from "../model/task-group";
-import {Task} from "../model/task";
+import {TaskGroupService} from '../service/task-group.service';
 
 @Component({
   selector: 'sl-taskboard',
@@ -9,19 +8,15 @@ import {Task} from "../model/task";
 })
 export class TaskboardComponent implements OnInit {
 
-  private taskGroups: Array<TaskGroup>;
-
-  constructor() {
-    this.taskGroups = new Array<TaskGroup>();
-    this.taskGroups.push(<TaskGroup> {id: 1, name: 'Test', purpose: 'Example', tasks: new Array<Task>()});
-    this.taskGroups.push(<TaskGroup> {id: 2, name: 'Test2', purpose: 'Example', tasks: new Array<Task>()});
+  constructor(public readonly taskGroupService: TaskGroupService) {
+    this.taskGroupService.loadTaskGroups();
   }
 
-  ngOnInit(): void {
+  public add(): void{
+    //this.taskGroupService.add();
   }
 
-  public getTaskGroups(): Array<TaskGroup>{
-    return this.taskGroups;
+  public ngOnInit(): void {
   }
 
 }

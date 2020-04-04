@@ -1,9 +1,9 @@
-import {Task} from "./task";
+import {Task} from './task';
 
 export interface TaskGroup {
 
   id: number;
-  name: string;
+  title: string;
   purpose: string;
   tasks: Array<Task>;
 

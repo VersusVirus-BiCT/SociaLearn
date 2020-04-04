@@ -1,4 +1,12 @@
-<mat-card *ngFor="let taskGroup of getTaskGroups()">
-  <mat-card-title>{{taskGroup.name}}</mat-card-title>
-  <mat-card-content>{{taskGroup.purpose}}</mat-card-content>
-</mat-card>
+<h1>{{'task.title' | translate}}</h1>
+<div class="flexbox">
+  <mat-card *ngFor="let taskGroup of taskGroupService.taskGroups$ | async" >
+    <mat-card-title><a [routerLink]="['/task/tasks/'+taskGroup.id]">{{taskGroup.title}}</a></mat-card-title>
+    <mat-card-content>
+      <a [routerLink]="['/task/tasks/'+taskGroup.id]">
+        <img src="https://die-erfolgskomplizen.de/wp-content/uploads/2018/02/bild-platzhalter-300x200px.gif">
+      </a>
+    </mat-card-content>
+    <mat-card-footer>{{taskGroup.purpose}}<mat-icon>check_circle</mat-icon></mat-card-footer>
+  </mat-card>
+</div>
