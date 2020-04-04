@@ -15,6 +15,7 @@ export class TaskTypeService {
   private _taskType: BehaviorSubject<TaskType> = new BehaviorSubject<TaskType>(new class implements TaskType {
     public id: number;
     public name: string;
+    public solutionType: string;
   });
   public readonly taskType$: Observable<TaskType> = this._taskType.asObservable();
 
