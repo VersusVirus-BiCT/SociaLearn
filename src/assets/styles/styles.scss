@@ -46,7 +46,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   text-transform: uppercase;
 }
 
-.capitalize {
+.caps {
   text-transform: capitalize;
 }
 
@@ -103,4 +103,8 @@ button {
   .mar-left-#{$i} {
       margin-left: 1px * $i;
   }
+
+  .mar-right-#{$i} {
+    margin-right: 1px * $i;
+}
 }

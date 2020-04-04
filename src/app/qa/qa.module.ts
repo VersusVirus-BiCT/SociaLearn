@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { QaComponent } from './qa.component';
+import { TranslationModule } from '../core/translation/translation.module';
+import { MaterialModule } from '../core/material/material.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [QaComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslationModule,
+    MaterialModule
+  ],
+  exports: [
+    QaComponent
   ]
 })
 export class QaModule { }
