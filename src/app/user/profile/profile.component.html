@@ -1,15 +1,6 @@
 <h1>Username</h1>
+<span>User: {{user.username}}</span>
 
 <h2>Ranking</h2>
 
 <h2>Achievements</h2>
-
-<ul>
-  <li *ngFor="let a of achievements$ | async">
-    {{a.title}}
-  </li>
-</ul>
-
-<button (click)="onGiveAchievement()">Give Achievement</button>
-
-<span>User: {{user.username}}</span>
