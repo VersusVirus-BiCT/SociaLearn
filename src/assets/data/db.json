@@ -14,5 +14,9 @@
             "password": "12345678",
             "role": "Administrator"
         }
-    ]
+    ],
+
+    "achievements": [{
+        "title": "First lession learned"
+    }]
 }

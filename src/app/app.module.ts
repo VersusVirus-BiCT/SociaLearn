@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslationModule, HttpLoaderFactory } from './core/translation/translation.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { NgxsModule } from '@ngxs/store';
+import { AchievementState } from './achievement/achievement.state';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
       isolate: false
     }),
     TranslationModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    NgxsModule.forRoot([AchievementState])
   ],
   providers: [],
   bootstrap: [AppComponent]
