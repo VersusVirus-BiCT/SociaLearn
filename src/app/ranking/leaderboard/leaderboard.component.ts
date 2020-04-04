@@ -15,9 +15,6 @@ interface SortedUser extends User {
   styleUrls: ['./leaderboard.component.scss']
 })
 export class LeaderboardComponent implements OnInit {
-  @ViewChild(MatSort, { static: true })
-  public sort: MatSort;
-
   public users: MatTableDataSource<SortedUser>;
   public columns: string[] = [
     'position',
@@ -27,20 +24,29 @@ export class LeaderboardComponent implements OnInit {
     'achievements'
   ];
 
+  @ViewChild(MatSort, { static: false })
+  public set sort(sort: MatSort) {
+    this.users.sort = sort;
+  }
+
   constructor(private userService: UserService) { }
 
   public ngOnInit(): void {
+    // get all users
     this.userService.getUsers().pipe(
+
+      // sort users by karma
       map(users => users.sort((prev, next) => {
         let sort = next.karma.level - prev.karma.level
         if (sort === 0) sort = next.karma.experience - prev.karma.experience;
         return sort;
       })),
+
+      // assign position number
       map(users => users.map<SortedUser>((user, idx) => ({ ...user, position: idx + 1 })))
-    ).subscribe(users => {
-      this.users = new MatTableDataSource(users);
-      this.users.sort = this.sort;
-    });
+
+      // add users into table
+    ).subscribe(users => this.users = new MatTableDataSource(users));
   }
 
 }
