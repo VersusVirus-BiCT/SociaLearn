@@ -31,11 +31,16 @@
             "name": "Addition 1",
             "description": "Löse die Addition",
             "question": "5+7",
-            "solution": "12",
+            "solution": [
+              {"id": 1, "value": "A", "correct": true},
+              {"id": 2, "value": "B", "correct": true},
+              {"id": 3, "value": "C", "correct": false}
+            ],
             "points": 1,
             "type": {
               "id": 1,
-              "name": "Multiply Choice"
+              "name": "Multiply Choice",
+              "solutionType" : "array"
             }
           },
           {
@@ -43,11 +48,16 @@
             "name": "Addition 2",
             "description": "Löse die Addition",
             "question": "23+7",
-            "solution": "30",
+            "solution": [
+              {"id": 1, "value": "A", "correct": true},
+              {"id": 2, "value": "B", "correct": false},
+              {"id": 3, "value": "C", "correct": false}
+            ],
             "points": 1,
             "type": {
               "id": 2,
-              "name": "Single Choice"
+              "name": "Single Choice",
+              "solutionType" : "array"
             }
           },
           {
@@ -55,7 +65,7 @@
             "name": "Subtraktion 1",
             "description": "Löse die Subtraktion",
             "question": "23-7",
-            "solution": "16",
+            "solution": 16,
             "points": 1,
             "type": {
               "id": 3,
