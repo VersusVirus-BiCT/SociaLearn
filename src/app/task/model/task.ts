@@ -1,3 +1,5 @@
+import { TaskType } from './task-type';
+
 export interface Task {
 
   id: number;
@@ -6,5 +8,6 @@ export interface Task {
   question: string;
   solution: string;
   points: number;
+  type: TaskType
 
 }

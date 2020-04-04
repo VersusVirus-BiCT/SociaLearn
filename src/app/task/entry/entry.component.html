@@ -1,1 +1,20 @@
-<p>entry works!</p>
+<h1>{{ (user.role == "teacher") ? "Erfassung: " : "" }}{{ taskGroup.purpose }}</h1>
+
+<mat-card *ngFor="let task of taskGroup.tasks">
+  <mat-card-title>{{ task.name }}</mat-card-title>
+  <mat-card-subtitle>
+    {{ task.type.name }}
+  </mat-card-subtitle>
+  <mat-card-content *ngIf="task.type.name == 'Single Choice'">
+    Fill in single Choice!
+  </mat-card-content>
+  <mat-card-content *ngIf="task.type.name == 'Multiply Choice'">
+    Fill in Multiply Choice!
+  </mat-card-content>
+  <mat-card-content *ngIf="task.type.name == 'Text'">
+    Fill in Text!
+  </mat-card-content>
+  <mat-card-content *ngIf="task.type.name == 'Number'">
+    Fill in Number!
+  </mat-card-content>
+</mat-card>

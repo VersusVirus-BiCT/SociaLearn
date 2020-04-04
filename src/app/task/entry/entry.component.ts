@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TaskGroup} from '../model/task-group';
+import {TaskGroupService} from '../service/task-group.service';
 
 @Component({
   selector: 'sl-entry',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntryComponent implements OnInit {
 
-  constructor() { }
+  @Input() public taskGroupId = 1;
+  @Input() public user = {role: 'school'};
+  public taskGroup: TaskGroup;
 
-  ngOnInit(): void {
+  constructor(private taskGroupService: TaskGroupService) {
+    this.taskGroupService.getTaskGroup(this.taskGroupId).subscribe((taskgroup: TaskGroup) => this.taskGroup = taskgroup);
   }
 
+  public ngOnInit(): void {
+
+  }
 }
