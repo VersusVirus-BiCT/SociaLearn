@@ -1,0 +1,8 @@
+<div *ngIf="taskService.taskGroup$ | async; let taskgrp">
+  <h1>{{taskgrp.title}}</h1>
+  <mat-card *ngFor="let task of taskgrp.tasks">
+    <mat-card-title>{{task.name}}</mat-card-title>
+    <mat-card-content>
+      <mat-icon>school</mat-icon>{{task.question}}</mat-card-content>
+  </mat-card>
+</div>
