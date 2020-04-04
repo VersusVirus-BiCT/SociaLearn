@@ -12,7 +12,9 @@ export class TaskboardComponent implements OnInit {
     this.taskGroupService.loadTaskGroups();
   }
 
-
+  public add(): void{
+    //this.taskGroupService.add();
+  }
 
   public ngOnInit(): void {
   }
