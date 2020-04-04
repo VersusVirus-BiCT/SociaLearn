@@ -37,5 +37,4 @@ export class TaskGroupService {
       o => console.log(taskGroup,o)
     );
   }
-
 }

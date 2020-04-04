@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {TaskGroupService} from "../service/task-group.service";
-import {SolutionOption} from "../model/solution-option";
-import {Task} from "../model/task";
+import {ActivatedRoute} from '@angular/router';
+import {TaskGroupService} from '../service/task-group.service';
+import {SolutionOption} from '../model/solution-option';
+import {Task} from '../model/task';
 
 @Component({
   selector: 'sl-tasks',
@@ -32,8 +32,8 @@ export class TasksComponent implements OnInit {
     if(task.type.solutionType == 'text' && task.solution == this.answer[index])
       this.correct[index] = true;
     else {
-      let solution: number = 0;
-      let solved: number = 0;
+      let solution = 0;
+      let solved = 0;
       task.solution.filter((e:SolutionOption) => {solution = solution + ((e.correct)?1:0);});
       for(let i = 0; i < arr.length; i++){
         for(let j = 0; j < task.solution.length; j++){
@@ -54,7 +54,7 @@ export class TasksComponent implements OnInit {
     this.answer[index] = value;
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }
