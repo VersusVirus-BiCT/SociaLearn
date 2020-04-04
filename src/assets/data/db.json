@@ -1,18 +1,28 @@
 {
     "user": [{
+            "id": 1,
             "username": "admin",
             "password": "12345678",
-            "role": "Administrator"
+            "role": "Administrator",
+            "achievements": [],
+            "tasks": []
+
         },
         {
+            "id": 2,
             "username": "student1",
             "password": "12345678",
-            "role": "Administrator"
+            "role": "Administrator",
+            "achievements": [],
+            "tasks": []
         },
         {
+            "id": 3,
             "username": "student2",
             "password": "12345678",
-            "role": "Administrator"
+            "role": "Administrator",
+            "achievements": [],
+            "tasks": []
         }
     ],
 
