@@ -6,8 +6,8 @@ export interface Task {
   name: string;
   description: string;
   question: string;
-  solution: string;
+  solution: any;
   points: number;
-  type: TaskType
+  type: TaskType;
 
 }

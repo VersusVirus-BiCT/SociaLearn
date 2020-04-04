@@ -1,0 +1,11 @@
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+mat-card{
+  order: 1;
+  width: 300px;
+  margin: 10px;
+}

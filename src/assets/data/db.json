@@ -39,7 +39,8 @@
             "points": 1,
             "type": {
               "id": 1,
-              "name": "Multiple Choice"
+              "name": "Multiple Choice",
+              "solutionType" : "checkbox"
             }
           },
           {
@@ -55,7 +56,8 @@
             "points": 1,
             "type": {
               "id": 2,
-              "name": "Single Choice"
+              "name": "Single Choice",
+              "solutionType" : "select"
             }
           },
           {
@@ -67,7 +69,8 @@
             "points": 1,
             "type": {
               "id": 3,
-              "name": "Number"
+              "name": "Number",
+              "solutionType": "text"
             }
           }
         ]
@@ -86,7 +89,8 @@
             "points": 1,
             "type": {
               "id": 4,
-              "name": "Text"
+              "name": "Text",
+              "solutionType": "text"
             }
           },
           {
@@ -94,11 +98,16 @@
             "name": "Java Keywords",
             "description": "Beantworte die Frage",
             "question": "Was bedeutet static",
-            "solution": "Verwendung von Variablen oder Methoden auf Klassenebene",
+            "solution": [
+              {"id": 1, "value": "A", "correct": true},
+              {"id": 2, "value": "B", "correct": false},
+              {"id": 3, "value": "C", "correct": false}
+            ],
             "points": 1,
             "type": {
               "id": 4,
-              "name": "Text"
+              "name": "Text",
+              "solutionType": "radio"
             }
           },
           {
@@ -106,11 +115,16 @@
             "name": "Java Prinzipien",
             "description": "Beantworte die Frage",
             "question": "Wofür steht OO",
-            "solution": "OO ist ein Paradigma welches Reale Objekte in Klassen gliedert",
+            "solution": [
+              {"id": 1, "value": "A", "correct": true},
+              {"id": 2, "value": "B", "correct": false},
+              {"id": 3, "value": "C", "correct": false}
+            ],
             "points": 1,
             "type": {
               "id": 4,
-              "name": "Text"
+              "name": "Text",
+              "solutionType": "select"
             }
           }
         ]
