@@ -1,5 +1,6 @@
-<mat-card *ngFor="let taskGroup of taskGroups$ | async">
-  <mat-card-title>{{taskGroup.title}}</mat-card-title>
+<h1>{{'task.title' | translate}}</h1>
+<mat-card *ngFor="let taskGroup of taskGroupService.taskGroups$ | async" >
+  <mat-card-title><a [routerLink]="['/task/tasks/'+taskGroup.id]">{{taskGroup.title}}</a></mat-card-title>
   <mat-card-content>
     <mat-icon>school</mat-icon>{{taskGroup.purpose}}</mat-card-content>
 </mat-card>

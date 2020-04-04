@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TaskGroup} from '../model/task-group';
 import {TaskGroupService} from '../service/task-group.service';
 
 @Component({
@@ -11,10 +10,9 @@ export class EntryComponent implements OnInit {
 
   @Input() public taskGroupId = 1;
   @Input() public user = {role: 'school'};
-  public taskGroup: TaskGroup;
 
-  constructor(private taskGroupService: TaskGroupService) {
-    this.taskGroupService.getTaskGroup(this.taskGroupId).subscribe((taskgroup: TaskGroup) => this.taskGroup = taskgroup);
+  constructor(public readonly taskGroupService: TaskGroupService) {
+    this.taskGroupService.loadTaskGroup(this.taskGroupId);
   }
 
   public ngOnInit(): void {
