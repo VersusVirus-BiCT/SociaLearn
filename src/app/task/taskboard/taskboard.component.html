@@ -1,4 +1,5 @@
-<mat-card *ngFor="let taskGroup of getTaskGroups()">
-  <mat-card-title>{{taskGroup.name}}</mat-card-title>
-  <mat-card-content>{{taskGroup.purpose}}</mat-card-content>
+<mat-card *ngFor="let taskGroup of taskGroups$ | async">
+  <mat-card-title>{{taskGroup.title}}</mat-card-title>
+  <mat-card-content>
+    <mat-icon>school</mat-icon>{{taskGroup.purpose}}</mat-card-content>
 </mat-card>

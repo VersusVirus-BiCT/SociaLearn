@@ -18,5 +18,70 @@
 
     "achievements": [{
         "title": "First lession learned"
-    }]
+    }],
+
+    "taskgroup": [
+      {
+        "id": 1,
+        "title": "Math",
+        "purpose": "Math Aufgaben Einfach",
+        "tasks": [
+          {
+            "id": 1,
+            "name": "Addition 1",
+            "description": "Löse die Addition",
+            "question": "5+7",
+            "solution": "12",
+            "points": 1
+          },
+          {
+            "id": 2,
+            "name": "Addition 2",
+            "description": "Löse die Addition",
+            "question": "23+7",
+            "solution": "30",
+            "points": 1
+          },
+          {
+            "id": 3,
+            "name": "Subtraktion 1",
+            "description": "Löse die Subtraktion",
+            "question": "23-7",
+            "solution": "16",
+            "points": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Java",
+        "purpose": "Java Aufgaben Einfach",
+        "tasks": [
+          {
+            "id": 4,
+            "name": "Java Variablen",
+            "description": "Beantworte die Frage",
+            "question": "Was ist eine Variable",
+            "solution": "Ein Platzhalter für Werte",
+            "points": 1
+          },
+          {
+            "id": 5,
+            "name": "Java Keywords",
+            "description": "Beantworte die Frage",
+            "question": "Was bedeutet static",
+            "solution": "Verwendung von Variablen oder Methoden auf Klassenebene",
+            "points": 1
+          },
+          {
+            "id": 6,
+            "name": "Java Prinzipien",
+            "description": "Beantworte die Frage",
+            "question": "Wofür steht OO",
+            "solution": "OO ist ein Paradigma welches Reale Objekte in Klassen gliedert",
+            "points": 1
+          }
+        ]
+      }
+    ]
 }

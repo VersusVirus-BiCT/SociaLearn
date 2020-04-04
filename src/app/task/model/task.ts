@@ -1,9 +1,9 @@
 export interface Task {
 
-  id: bigint;
+  id: number;
   name: string;
   description: string;
-  work: string;
+  question: string;
   solution: string;
   points: number;
 

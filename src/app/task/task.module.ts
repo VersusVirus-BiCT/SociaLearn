@@ -5,6 +5,7 @@ import { TaskRoutingModule } from './task-routing.module';
 import { TaskboardComponent } from './taskboard/taskboard.component';
 import { EntryComponent } from './entry/entry.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {MatCardModule} from "@angular/material/card";
   imports: [
     CommonModule,
     TaskRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ]
 })
 export class TaskModule { }

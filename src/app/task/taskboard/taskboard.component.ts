@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TaskGroup} from "../model/task-group";
-import {Task} from "../model/task";
+import {TaskGroupService} from "../service/task-group.service";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Component({
   selector: 'sl-taskboard',
@@ -9,19 +10,15 @@ import {Task} from "../model/task";
 })
 export class TaskboardComponent implements OnInit {
 
-  private taskGroups: Array<TaskGroup>;
+  private _taskGroups: BehaviorSubject<TaskGroup[]> = new BehaviorSubject<TaskGroup[]>([]);
 
-  constructor() {
-    this.taskGroups = new Array<TaskGroup>();
-    this.taskGroups.push(<TaskGroup> {id: 1, name: 'Test', purpose: 'Example', tasks: new Array<Task>()});
-    this.taskGroups.push(<TaskGroup> {id: 2, name: 'Test2', purpose: 'Example', tasks: new Array<Task>()});
+  public readonly taskGroups$: Observable<TaskGroup[]> = this._taskGroups.asObservable();
+
+  constructor(private taskGroupService: TaskGroupService) {
+    this.taskGroupService.getTaskGroups().subscribe((taskgroups: TaskGroup[]) => this._taskGroups.next(taskgroups));
   }
 
   ngOnInit(): void {
-  }
-
-  public getTaskGroups(): Array<TaskGroup>{
-    return this.taskGroups;
   }
 
 }
