@@ -1,65 +1,71 @@
 {
-    "user": [{
-            "id": 1,
-            "username": "admin",
-            "password": "12345678",
-            "role": "Administrator",
-            "achievements": [],
-            "tasks": [],
-            "karma": {
-                "experience": "2500",
-                "maxExperience": "7000",
-                "level": 6
-            }
-        },
-        {
-            "id": 2,
-            "username": "Teacher1",
-            "password": "12345678",
-            "role": "Teacher",
-            "achievements": [],
-            "tasks": [],
-            "karma": {
-                "experience": "100",
-                "maxExperience": "3000",
-                "level": 2
-            }
-        },
-        {
-            "id": 3,
-            "username": "student2",
-            "password": "12345678",
-            "role": "Student",
-            "achievements": [],
-            "tasks": [],
-            "karma": {
-                "experience": "6300",
-                "maxExperience": "10000",
-                "level": 9
-            }
-        },
-        {
-            "id": 4,
-            "username": "student3",
-            "password": "12345678",
-            "role": "Student",
-            "achievements": [],
-            "tasks": [],
-            "karma": {
-                "experience": "8500",
-                "maxExperience": "10000",
-                "level": 9
-            }
-        }
-    ],
+  "user": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "12345678",
+      "role": "Administrator",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "2500",
+        "maxExperience": "7000",
+        "level": 6
+      }
+    },
+    {
+      "id": 2,
+      "username": "Teacher1",
+      "password": "12345678",
+      "role": "Teacher",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "100",
+        "maxExperience": "3000",
+        "level": 2
+      }
+    },
+    {
+      "id": 3,
+      "username": "student2",
+      "password": "12345678",
+      "role": "Student",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "6300",
+        "maxExperience": "10000",
+        "level": 9
+      }
+    },
+    {
+      "id": 4,
+      "username": "student3",
+      "password": "12345678",
+      "role": "Student",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "8500",
+        "maxExperience": "10000",
+        "level": 9
+      }
+    }
+  ],
 
-    "achievements": [{
-            "id": 1,
-            "title": "First lession learned"
-        },
-        {
-            "id": 2,
-            "title": "Visit profile page"
-        }
-    ]
+  "achievements": [
+    {
+      "id": 1,
+      "title": "First lession finished"
+    },
+    {
+      "id": 2,
+      "title": "Visit profile page"
+    },
+    {
+      "id": 3,
+      "title": "Find yourself in the leaderboard"
+    }
+  ]
 }

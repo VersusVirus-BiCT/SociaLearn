@@ -4,6 +4,10 @@ import { User } from '../../user/models/user';
 import { map } from 'rxjs/operators';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { Store } from '@ngxs/store';
+import { UserState } from '../../user/state/user.state';
+import { UserActions } from 'src/app/user/state/user.actions';
+import { AchievementType } from '../../achievement/enums/achievement-type';
 
 interface SortedUser extends User {
   position: number;
@@ -29,7 +33,10 @@ export class LeaderboardComponent implements OnInit {
     this.users.sort = sort;
   }
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private store: Store,
+  ) { }
 
   public ngOnInit(): void {
     // get all users
@@ -47,6 +54,12 @@ export class LeaderboardComponent implements OnInit {
 
       // add users into table
     ).subscribe(users => this.users = new MatTableDataSource(users));
+  }
+
+  public onUserClick(user: User): void {
+    if (user.id === this.store.selectSnapshot(UserState.activeUser).id) {
+      this.store.dispatch(new UserActions.EarnAchievement(AchievementType.FIND_IN_LEADERBOARD));
+    }
   }
 
 }
