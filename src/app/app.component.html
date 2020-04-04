@@ -1,14 +1,22 @@
-<nav>
-  <ul>
-    <li>
-      <a routerLink='/user/profile'>Profile</a>
-    </li>
-    <li>
-      <a routerLink='/task/board'>Taskboard</a>
-    </li>
-    <li>
-      <a routerLink='/ranking/leaderboard'>Leaderboard</a>
-    </li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
+<header>
+  <div class="title">
+    <h1>SociaLearning</h1>
+    <span>by BiCT AG</span>
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/user/profile" routerLinkActive="active">Profile</a>
+      </li>
+      <li>
+        <a routerLink="/task/board" routerLinkActive="active">Taskboard</a>
+      </li>
+      <li>
+        <a routerLink="/ranking/leaderboard" routerLinkActive="active">Leaderboard</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

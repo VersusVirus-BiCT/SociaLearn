@@ -1,8 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./theme";
+@include angular-material-theme($bict-theme);
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .row {
   display: flex;
@@ -60,11 +66,11 @@ button {
   }
 
   .height-#{$i} {
-      height: 1% * $i;
+    height: 1% * $i;
   }
 
   .pad-#{$i} {
-      padding: 1px * $i;
+    padding: 1px * $i;
   }
 
   .pad-left-#{$i} {
@@ -84,8 +90,8 @@ button {
   }
 
   .flex-grow-#{$i} {
-      flex-grow: 1 * $i;
-      box-sizing: border-box;
+    flex-grow: 1 * $i;
+    box-sizing: border-box;
   }
 
   .mar-#{$i} {
@@ -93,14 +99,14 @@ button {
   }
 
   .mar-bottom-#{$i} {
-      margin-bottom: 1px * $i;
+    margin-bottom: 1px * $i;
   }
 
   .mar-top-#{$i} {
-      margin-top: 1px * $i;
+    margin-top: 1px * $i;
   }
 
   .mar-left-#{$i} {
-      margin-left: 1px * $i;
+    margin-left: 1px * $i;
   }
 }

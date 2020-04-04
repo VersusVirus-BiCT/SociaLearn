@@ -1,25 +1,4 @@
 {
-  "user": [{
-    "username": "admin",
-    "password": "12345678",
-    "role": "Administrator"
-  },
-    {
-      "username": "student1",
-      "password": "12345678",
-      "role": "Administrator"
-    },
-    {
-      "username": "student2",
-      "password": "12345678",
-      "role": "Administrator"
-    }
-  ],
-
-  "achievements": [{
-    "title": "First lession learned"
-  }],
-
   "taskgroup": [
     {
       "id": 1,
@@ -32,15 +11,27 @@
           "description": "Löse die Addition",
           "question": "5+7",
           "solution": [
-            {"id": 1, "value": "A", "correct": true},
-            {"id": 2, "value": "B", "correct": true},
-            {"id": 3, "value": "C", "correct": false}
+            {
+              "id": 1,
+              "value": "A",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "value": "B",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "value": "C",
+              "correct": false
+            }
           ],
           "points": 1,
           "type": {
             "id": 1,
             "name": "Multiple Choice",
-            "solutionType" : "checkbox"
+            "solutionType": "checkbox"
           }
         },
         {
@@ -49,15 +40,27 @@
           "description": "Löse die Addition",
           "question": "23+7",
           "solution": [
-            {"id": 1, "value": "A", "correct": true},
-            {"id": 2, "value": "B", "correct": false},
-            {"id": 3, "value": "C", "correct": false}
+            {
+              "id": 1,
+              "value": "A",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "value": "B",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "value": "C",
+              "correct": false
+            }
           ],
           "points": 1,
           "type": {
             "id": 2,
             "name": "Single Choice",
-            "solutionType" : "select"
+            "solutionType": "select"
           }
         },
         {
@@ -99,9 +102,21 @@
           "description": "Beantworte die Frage",
           "question": "Was bedeutet static",
           "solution": [
-            {"id": 1, "value": "A", "correct": true},
-            {"id": 2, "value": "B", "correct": false},
-            {"id": 3, "value": "C", "correct": false}
+            {
+              "id": 1,
+              "value": "A",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "value": "B",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "value": "C",
+              "correct": false
+            }
           ],
           "points": 1,
           "type": {
@@ -116,9 +131,21 @@
           "description": "Beantworte die Frage",
           "question": "Wofür steht OO",
           "solution": [
-            {"id": 1, "value": "A", "correct": true},
-            {"id": 2, "value": "B", "correct": false},
-            {"id": 3, "value": "C", "correct": false}
+            {
+              "id": 1,
+              "value": "A",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "value": "B",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "value": "C",
+              "correct": false
+            }
           ],
           "points": 1,
           "type": {
@@ -130,7 +157,60 @@
       ]
     }
   ],
-
+  "user": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "12345678",
+      "role": "Administrator",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "2500",
+        "maxExperience": "7000",
+        "level": 6
+      }
+    },
+    {
+      "id": 2,
+      "username": "Teacher1",
+      "password": "12345678",
+      "role": "Teacher",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "100",
+        "maxExperience": "3000",
+        "level": 2
+      }
+    },
+    {
+      "id": 3,
+      "username": "student2",
+      "password": "12345678",
+      "role": "Student",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "6300",
+        "maxExperience": "10000",
+        "level": 9
+      }
+    },
+    {
+      "id": 4,
+      "username": "student3",
+      "password": "12345678",
+      "role": "Student",
+      "achievements": [],
+      "tasks": [],
+      "karma": {
+        "experience": "8500",
+        "maxExperience": "10000",
+        "level": 9
+      }
+    }
+  ],
   "taskType": [
     {
       "id": 1,
@@ -151,6 +231,16 @@
       "id": 4,
       "name": "Text",
       "solutionType": "text"
+    }
+  ],
+  "achievements": [
+    {
+      "id": 1,
+      "title": "First lession learned"
+    },
+    {
+      "id": 2,
+      "title": "Visit profile page"
     }
   ]
 }
