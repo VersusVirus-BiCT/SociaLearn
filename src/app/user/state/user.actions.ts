@@ -1,5 +1,6 @@
-import { Achievement } from '../../achievement/achievement.model';
 import { User } from '../models/user';
+import { AchievementType } from '../../achievement/enums/achievement-type';
+
 const ctx = '[UserState] ';
 
 export namespace UserActions {
@@ -10,6 +11,6 @@ export namespace UserActions {
 
   export class EarnAchievement {
     public static readonly type = ctx + 'earn achievement';
-    constructor(public achievement: Achievement) { }
+    constructor(public type: AchievementType) { }
   }
 }

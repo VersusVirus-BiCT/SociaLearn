@@ -1,5 +1,5 @@
-import { Achievement } from '../../achievement/achievement.model';
 import { Task } from '../../task/model/task';
+import { Achievement } from '../../achievement/models/achievement';
 
 export interface User {
   username: string;

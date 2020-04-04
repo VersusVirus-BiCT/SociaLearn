@@ -27,6 +27,12 @@
     ],
 
     "achievements": [{
-        "title": "First lession learned"
-    }]
+            "id": 1,
+            "title": "First lession learned"
+        },
+        {
+            "id": 2,
+            "title": "Visit profile page"
+        }
+    ]
 }

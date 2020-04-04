@@ -1,9 +1,13 @@
+import { Achievement } from './../../achievement/models/achievement';
 import { Injectable } from '@angular/core';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { UserStateModel } from '../models/user-state-model';
 import { UserActions as UA } from './user.actions';
 import { patch, insertItem } from '@ngxs/store/operators';
 import { User } from '../models/user';
+import { AchievementService } from '../../achievement/services/achievement.service';
+import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable()
 @State<UserStateModel>({
@@ -19,6 +23,10 @@ export class UserState {
     return state.activeUser;
   }
 
+  constructor(
+    private achievementService: AchievementService
+  ) { }
+
   @Action(UA.Login)
   public login(ctx: StateContext<UserStateModel>, { user }: UA.Login): void {
     ctx.setState(patch({
@@ -26,12 +34,15 @@ export class UserState {
     }));
   }
 
-  @Action(UA.EarnAchievement)
-  public earnAchievement(ctx: StateContext<UserStateModel>, { achievement }: UA.EarnAchievement): void {
-    ctx.setState(patch({
-      activeUser: patch({
-        achievements: insertItem(achievement)
-      })
+  @Action(UA.EarnAchievement, { cancelUncompleted: true })
+  public earnAchievement(ctx: StateContext<UserStateModel>, { type }: UA.EarnAchievement): Observable<Achievement> {
+    // TODO: find a way to actually give back the achievement model
+    return this.achievementService.getAchievement(type).pipe(tap(achievement => {
+      ctx.setState(patch({
+        activeUser: patch({
+          achievements: insertItem(achievement)
+        })
+      }));
     }));
   }
 
