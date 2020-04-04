@@ -1,2 +1,14 @@
-<button mat-raised-button color="primary">{{ 'test' | translate:{'page':'App'} }}</button>
+<nav>
+  <ul>
+    <li>
+      <a routerLink='/user/profile'>Profile</a>
+    </li>
+    <li>
+      <a routerLink='/task/board'>Taskboard</a>
+    </li>
+    <li>
+      <a routerLink='/ranking/leaderboard'>Leaderboard</a>
+    </li>
+  </ul>
+</nav>
 <router-outlet></router-outlet>

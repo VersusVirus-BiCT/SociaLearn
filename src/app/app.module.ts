@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MaterialModule } from './core/modules/material/material.module';
+import { MaterialModule } from './core/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { TranslationModule, HttpLoaderFactory } from './core/modules/translation/translation.module';
+import { TranslationModule, HttpLoaderFactory } from './core/translation/translation.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -26,7 +26,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       },
-      isolate : false
+      isolate: false
     }),
     TranslationModule.forRoot(),
     HttpClientModule
