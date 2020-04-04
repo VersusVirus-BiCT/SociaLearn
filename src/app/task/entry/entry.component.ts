@@ -17,6 +17,7 @@ export class EntryComponent implements OnInit {
   public user = {role: 'school'};
   public taskGroup: TaskGroup;
   public taskTypes: TaskType[];
+  public lastTaskId : number;
 
   constructor(private route: ActivatedRoute, taskGroupService: TaskGroupService, taskTypeService: TaskTypeService) {
     this.taskGroupId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
@@ -24,6 +25,8 @@ export class EntryComponent implements OnInit {
     taskTypeService.loadTaskTypes();
     taskGroupService.taskGroups$.subscribe((taskGroups : TaskGroup[]) => {
       this.taskGroup = taskGroups.find(tt => tt.id === this.taskGroupId);
+      if(this.taskGroup)
+      this.lastTaskId = this.taskGroup.tasks.length;
     });
     taskTypeService.taskTypes$.subscribe((taskTypes: TaskType[]) => {
       this.taskTypes = taskTypes;
@@ -34,8 +37,37 @@ export class EntryComponent implements OnInit {
   }
 
   public taskTypeChange(taskTypeId: number, task: Task): void {
-    task.type = this.taskTypes.find(tt => tt.id === taskTypeId);
-    task.solution = null;
+    const newType = this.taskTypes.find(tt => tt.id === taskTypeId);
+    if(task.type.solutionType === 'text' || newType.solutionType === 'text') {
+      task.solution = null;
+    }
+    task.type = newType;
+  }
+
+  public addSolution(task: Task): void{
+    task.solution = (typeof(task.solution) !== 'object' || task.solution === null) ? [] : task.solution;
+    task.solution.push({})
+  }
+
+  public removeSolution(task: Task, solution: object): void {
+    task.solution = task.solution.filter((sol:any) => sol !== solution);
+  }
+
+  public removeTask(task: Task): void {
+    this.taskGroup.tasks = this.taskGroup.tasks.filter(t => task.id !== t.id);
+  }
+
+  public addTask(taskGroup: TaskGroup): void {
+    this.lastTaskId++;
+    console.log(taskGroup.tasks.push({
+      id: this.lastTaskId,
+      name: 'Test',
+      description: 'Test',
+      points: 0,
+      question: null,
+      solution: null,
+      type: this.taskTypes[0]
+    }));
   }
 }
 
