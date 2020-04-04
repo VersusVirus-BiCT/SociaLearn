@@ -117,5 +117,24 @@
           }
         ]
       }
+    ],
+
+    "taskType": [
+      {
+        "id": 1,
+        "name": "Multiply Choice"
+      },
+      {
+        "id": 2,
+        "name": "Single Choice"
+      },
+      {
+        "id": 3,
+        "name": "Number"
+      },
+      {
+        "id": 4,
+        "name": "Text"
+      }
     ]
 }
