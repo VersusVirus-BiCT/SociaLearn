@@ -10,7 +10,8 @@ import { TranslationModule, HttpLoaderFactory } from './core/translation/transla
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgxsModule } from '@ngxs/store';
-import { AchievementState } from './achievement/achievement.state';
+import { UserState } from './user/state/user.state';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AchievementState } from './achievement/achievement.state';
     }),
     TranslationModule.forRoot(),
     HttpClientModule,
-    NgxsModule.forRoot([AchievementState])
+    NgxsModule.forRoot([UserState]),
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

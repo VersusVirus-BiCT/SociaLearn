@@ -22,13 +22,19 @@ export class TaskGroupService {
 
   constructor(private http: HttpClient) { }
 
-  public loadTaskGroups() {
+  public loadTaskGroups(): void{
     this.http.get(environment.API_URL + '/taskgroup')
       .subscribe((taskgroups: TaskGroup[]) => this._taskGroups.next(taskgroups));
   }
 
-  public loadTaskGroup(id: number){
+  public loadTaskGroup(id: number): void{
     this.http.get(environment.API_URL + '/taskgroup/'+((id >= 0)?id:''))
       .subscribe((taskgroup: TaskGroup) => this._taskGroup.next(taskgroup));
+  }
+
+  public add(taskGroup: TaskGroup): void{
+    this.http.post(environment.API_URL+'/taskgroup', {purpose:'Etwas',title:'Anderes',tasks: []}).subscribe(
+      o => console.log(taskGroup,o)
+    );
   }
 }
