@@ -27,9 +27,6 @@ export class TasksComponent implements OnInit {
   }
 
   public checkAnswer(task: Task, index: number): void{
-    console.log(task);
-    console.log(this.answer[index]);
-    //this.answer[index] = (Array.isArray(this.answer[index]))?this.answer[index]:[this.answer[index]];
     let arr = (Array.isArray(this.answer[index]))?this.answer[index]:[this.answer[index]];
     this.correct[index] = false;
     if(task.type.solutionType == 'text' && task.solution == this.answer[index])
