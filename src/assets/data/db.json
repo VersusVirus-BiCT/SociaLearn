@@ -5,24 +5,51 @@
             "password": "12345678",
             "role": "Administrator",
             "achievements": [],
-            "tasks": []
-
+            "tasks": [],
+            "karma": {
+                "experience": "2500",
+                "maxExperience": "7000",
+                "level": 6
+            }
         },
         {
             "id": 2,
-            "username": "student1",
+            "username": "Teacher1",
             "password": "12345678",
-            "role": "Administrator",
+            "role": "Teacher",
             "achievements": [],
-            "tasks": []
+            "tasks": [],
+            "karma": {
+                "experience": "100",
+                "maxExperience": "3000",
+                "level": 2
+            }
         },
         {
             "id": 3,
             "username": "student2",
             "password": "12345678",
-            "role": "Administrator",
+            "role": "Student",
             "achievements": [],
-            "tasks": []
+            "tasks": [],
+            "karma": {
+                "experience": "6300",
+                "maxExperience": "10000",
+                "level": 9
+            }
+        },
+        {
+            "id": 4,
+            "username": "student3",
+            "password": "12345678",
+            "role": "Student",
+            "achievements": [],
+            "tasks": [],
+            "karma": {
+                "experience": "8500",
+                "maxExperience": "10000",
+                "level": 9
+            }
         }
     ],
 
