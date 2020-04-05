@@ -7,9 +7,9 @@ import {Question} from '../models/question';
 })
 export class QuestionService {
 
-  public allQuestions: Question[] = [
+  public allQuestions: Question[] =[
     {
-      'question': 'Was ist der Sinn des Lebens?',
+      'question': 'What is the meaning of life?',
       'answers': [
         {
           'answer': 'You can just use one of your experience points to buy you help.',
@@ -92,10 +92,10 @@ export class QuestionService {
       ]
     },
     {
-      'question': 'Wie erhält man bei der 2. Aufgabe das Resultat von 5?',
+      'question': 'How do you get the result of 5 for the 2nd task?',
       'answers': [
         {
-          'answer': 'Versuch doch einfach 1 + 3 zu rechnen! Das ergibt dann 5, du Depp.',
+          'answer': 'Just try to calculate 1 + 3! That makes 5, you idiot.',
           'accepted': false,
           'votes': [
             {
