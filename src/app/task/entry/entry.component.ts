@@ -1,10 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {TaskGroupService} from '../service/task-group.service';
-import {TaskTypeService} from '../service/task-type.service';
-import {TaskGroup} from '../model/task-group';
-import {TaskType} from '../model/task-type';
-import {Task} from '../model/task';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { TaskGroupService } from '../service/task-group.service';
+import { TaskTypeService } from '../service/task-type.service';
+import { TaskGroup } from '../model/task-group';
+import { TaskType } from '../model/task-type';
+import { Task } from '../model/task';
+import { ActivatedRoute } from '@angular/router';
+import { TaskDialogComponent } from './task-dialog/task-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'sl-entry',
@@ -18,7 +20,12 @@ export class EntryComponent implements OnInit {
   public taskTypes: TaskType[];
   public lastTaskId : number;
 
-  constructor(private route: ActivatedRoute, private taskGroupService: TaskGroupService, taskTypeService: TaskTypeService) {
+  constructor(
+    private route: ActivatedRoute,
+    private taskGroupService: TaskGroupService,
+    taskTypeService: TaskTypeService,
+    public dialog: MatDialog
+  ) {
     this.taskGroupId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
     taskGroupService.loadTaskGroups();
     taskTypeService.loadTaskTypes();
@@ -57,15 +64,26 @@ export class EntryComponent implements OnInit {
 
   public addTask(taskGroup: TaskGroup): void {
     this.lastTaskId++;
-    taskGroup.tasks.push({
+    const newTask: Task = {
       id: this.getNextId(this.taskGroup.tasks),
-      name: 'Test',
-      description: 'Test',
+      name: '',
+      description: '',
       points: 0,
       question: null,
       solution: null,
       type: this.taskTypes[0]
+    };
+    const dialogRef = this.dialog.open(TaskDialogComponent, {data:{task: newTask, type: 'add'}});
+    const dialogFieldSubscription = dialogRef.afterClosed().subscribe((result: Task) => {
+      if(result) {
+        taskGroup.tasks.push(result);
+      }
+      dialogFieldSubscription.unsubscribe();
     });
+  }
+
+  public editTask(task: Task): void {
+    this.dialog.open(TaskDialogComponent, {data:{task: task, type: 'edit'}});
   }
 
   public setSolutionCorrectness(selected: any, solution: any): void {
@@ -77,16 +95,10 @@ export class EntryComponent implements OnInit {
   }
 
   private getNextId(object: any[]): number {
-    object = object.sort((t, s) => {
-        if (t.id < s.id) {
-          return 1
-        } else {
-          return -1
-        }
-      }
-    );
-    if(object.length) {
-      return object[0].id + 1;
+    const allIds = object.map(o => o.id);
+    allIds.sort((t, s) => (t < s) ? 1 : -1);
+    if(allIds.length) {
+      return allIds[0] + 1;
     }
     return 1;
   }
