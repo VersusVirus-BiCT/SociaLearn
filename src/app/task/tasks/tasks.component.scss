@@ -1,7 +1,42 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .question-section {
+    margin-top: 20px;
+
+    p mat-icon {
+      margin-right: 15px;
+    }
+
+    .question-holder {
+      width: 100%;
+    }
+  }
+
+  .answers-section mat-radio-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  .mat-card-footer{
+    bottom: 15px;
+    position: absolute;
+    width: calc(100% - 15px);
+    padding: 15px;
+
+    mat-icon {
+      float: right;
+      margin-right: 15px;
+    }
+
+    mat-icon:first-child {
+      float: left;
+    }
+  }
 
   .flexbox {
     width: 70%;
@@ -19,4 +54,5 @@ mat-card{
   order: 1;
   width: 300px;
   margin: 10px;
+  height: 233px;
 }

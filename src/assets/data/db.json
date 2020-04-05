@@ -3,12 +3,12 @@
     {
       "id": 1,
       "title": "Math",
-      "purpose": "Math Aufgaben Einfach",
+      "purpose": "Math tasks: Simple",
       "tasks": [
         {
           "id": 3,
           "name": "Subtraktion 1",
-          "description": "Löse die Subtraktion",
+          "description": "Solve the subtraction",
           "question": "23-8",
           "solution": "15",
           "points": 1,
@@ -21,7 +21,7 @@
         {
           "id": 2,
           "name": "Addition 2",
-          "description": "Löse die Addition",
+          "description": "Solve the addition",
           "question": "23+7",
           "solution": [
             {
@@ -50,7 +50,7 @@
         {
           "id": 1,
           "name": "Addition 1",
-          "description": "Löse die Addition",
+          "description": "Solve the addition",
           "question": "5+7",
           "solution": [
             {
@@ -81,14 +81,14 @@
     {
       "id": 2,
       "title": "Java",
-      "purpose": "Java Aufgaben Einfach",
+      "purpose": "Java tasks: Simple",
       "tasks": [
         {
           "id": 4,
-          "name": "Java Variablen",
-          "description": "Beantworte die Frage",
-          "question": "Was ist eine Variable",
-          "solution": "Ein Platzhalter für Werte",
+          "name": "Java variables",
+          "description": "Answer the question",
+          "question": "What is a variable",
+          "solution": "A placeholder for values",
           "points": 1,
           "type": {
             "id": 4,
@@ -99,8 +99,8 @@
         {
           "id": 5,
           "name": "Java Keywords",
-          "description": "Beantworte die Frage",
-          "question": "Was bedeutet static",
+          "description": "Answer the question",
+          "question": "What does static mean",
           "solution": [
             {
               "id": 1,
@@ -127,9 +127,9 @@
         },
         {
           "id": 6,
-          "name": "Java Prinzipien",
-          "description": "Beantworte die Frage",
-          "question": "Wofür steht OO",
+          "name": "Java principles",
+          "description": "Answer the question",
+          "question": "What does OO stand for?",
           "solution": [
             {
               "id": 1,
@@ -263,7 +263,7 @@
   ],
   "questions": [
     {
-      "question": "Was ist der Sinn des Lebens?",
+      "question": "What is the meaning of life?",
       "answers": [
         {
           "answer": "You can just use one of your experience points to buy you help.",
@@ -349,10 +349,10 @@
       ]
     },
     {
-      "question": "Wie erhält man bei der 2. Aufgabe das Resultat von 5?",
+      "question": "How do you get the result of 5 for the 2nd task?",
       "answers": [
         {
-          "answer": "Versuch doch einfach 1 + 3 zu rechnen! Das ergibt dann 5, du Depp.",
+          "answer": "Just try to calculate 1 + 3! That makes 5, you idiot.",
           "accepted": false,
           "votes": [
             {
