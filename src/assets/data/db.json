@@ -163,7 +163,18 @@
       "username": "admin",
       "password": "12345678",
       "role": "Administrator",
-      "achievements": [],
+      "achievements": [
+        {
+          "id": 1,
+          "title": "First lession learned",
+          "icon": "grade"
+        },
+        {
+          "id": 2,
+          "title": "Visit profile page",
+          "icon": "account_circle"
+        }
+      ],
       "tasks": [],
       "karma": {
         "experience": "2500",
@@ -236,15 +247,18 @@
   "achievements": [
     {
       "id": 1,
-      "title": "First lession learned"
+      "title": "First lession learned",
+      "icon": "grade"
     },
     {
       "id": 2,
-      "title": "Visit profile page"
+      "title": "Visit profile page",
+      "icon": "account_circle"
     },
     {
       "id": 3,
-      "title": "Find yourself in the leaderboard"
+      "title": "Find yourself in the leaderboard",
+      "icon": "visibility"
     }
   ],
   "questions": [

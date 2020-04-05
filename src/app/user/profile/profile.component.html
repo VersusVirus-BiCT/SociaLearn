@@ -1,6 +1,99 @@
-<h1>Username</h1>
+<article>
+  <header>
+    <div class="title">
+      <div class="profile-header">
+        <h1>Profile</h1>
+        <h4>{{user.username}}</h4>
+      </div>
+    </div>
+  </header>
+
+  <div class="row">
+    <section class="profile-img-section">
+      <mat-icon class="profile-img">account_circle</mat-icon>
+    </section>
+    <section class="experience-section">
+      <mat-card>
+        <mat-card-content>
+          <div class="experience-bar">
+            <span class="level">{{user.karma.level}}</span>
+            <span class="bar">
+              <span class="label">{{user.karma.experience}} / {{ user.karma.maxExperience }}</span>
+              <span class="bar-background"></span>
+              <span class="bar-foreground" [style.width]="getExperiencePercentage(user) + '%'"></span>
+            </span>
+            <span class="level">{{user.karma.level + 1}}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
+
+  <!-- <mat-card>
+    <mat-card-header>
+      <h2>Tasks</h2>
+    </mat-card-header>
+    <mat-card-content>
+
+    </mat-card-content>
+  </mat-card> -->
+
+  <mat-card>
+    <mat-card-header>
+      <h2>Achievements</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <ul class="achievement-list">
+        <li *ngFor="let achievement of user.achievements" class="achievement">
+          <mat-icon *ngIf="achievement.icon">{{achievement.icon}}</mat-icon>
+          <span>{{achievement.title}}</span>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+</article>
+
+<!-- <div class="profile-information">
+  <div class="profile-name">
+    <mat-icon>account_box</mat-icon>
+    <h4>{{user.username}}</h4>
+  </div>
+  <div class="profile-experience">
+    <p>experience</p>
+  </div>
+  <div class="profile-rank">
+    <p>Ranking</p>
+  </div>
+</div>
+
+<br><br>
+
+<div class="profile-tasks">
+  <h4>Overview Aufgaben</h4>
+  <div class="profile-task">
+    <img src="" alt="task-immage">
+    <h4>Task-Name</h4>
+  </div>
+</div>
+
+<br><br>
+
+<div class="profile-achievements">
+  <h4>achievements</h4>
+</div> -->
+
+
+<!-- <h1>Username</h1>
 <span>User: {{user.username}}</span>
-
 <h2>Ranking</h2>
+<h2>Achievements</h2> -->
 
-<h2>Achievements</h2>
+
+<!-- <div class="profile-content">
+  <div class="profile-header title">
+    <div class="profile-title">
+      <h1>Profile</h1>
+        <h4>User Account</h4>
+    </div>
+  </div> -->
