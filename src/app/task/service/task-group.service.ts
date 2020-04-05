@@ -53,14 +53,14 @@ export class TaskGroupService {
           'type': {
             'id': 2,
             'name': 'Single Choice',
-            'solutionType': 'select'
+            'solutionType': 'radio'
           }
         },
         {
           'id': 1,
           'name': 'Prime numbers',
-          'description': 'Which numbers are prime numbers?',
-          'question': '5*7',
+          'description': 'Choose all matching solutions',
+          'question': 'Which numbers are prime numbers?',
           'solution': [
             {
               'id': 1,
@@ -116,7 +116,7 @@ export class TaskGroupService {
           ],
           'points': 1,
           'type': {
-            'id': 2,
+            'id': 3,
             'name': 'Single Choice',
             'solutionType': 'select'
           }
@@ -145,9 +145,9 @@ export class TaskGroupService {
           ],
           'points': 1,
           'type': {
-            'id': 2,
+            'id': 3,
             'name': 'Single Choice Radio',
-            'solutionType': 'radio'
+            'solutionType': 'select'
           }
         },
         {
