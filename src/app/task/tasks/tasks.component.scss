@@ -1,7 +1,18 @@
-.flexbox {
+.container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: column;
+
+  .flexbox {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  aside {
+    width: 30%;
+  }
 }
 
 mat-card{
