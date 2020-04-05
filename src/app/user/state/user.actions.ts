@@ -13,4 +13,9 @@ export namespace UserActions {
     public static readonly type = ctx + 'earn achievement';
     constructor(public type: AchievementType) { }
   }
+
+  export class SaveUser {
+    public static readonly type = ctx + 'save user';
+    constructor(public user: User) { }
+  }
 }

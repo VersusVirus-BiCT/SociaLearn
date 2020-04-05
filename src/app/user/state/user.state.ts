@@ -6,6 +6,7 @@ import { patch, insertItem } from '@ngxs/store/operators';
 import { User } from '../models/user';
 import { AchievementService } from '../../achievement/services/achievement.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserService } from '../services/user.service';
 
 @Injectable()
 @State<UserStateModel>({
@@ -25,6 +26,7 @@ export class UserState {
     private achievementService: AchievementService,
     private zone: NgZone,
     private admiralSnackbar: MatSnackBar,
+    private userService: UserService,
   ) { }
 
   @Action(UA.Login)
@@ -43,11 +45,18 @@ export class UserState {
         })
       }));
 
+      ctx.dispatch(new UA.SaveUser(ctx.getState().activeUser));
+
       // run in zone to position correctly
       this.zone.run(() => {
         this.admiralSnackbar.open('Achievement unlocked: ' + achievement.title, 'OK', { duration: 5000, });
       });
     });
+  }
+
+  @Action(UA.SaveUser)
+  public saveUser({ user }: UA.SaveUser): void {
+    this.userService.putUser(user);
   }
 
 }
