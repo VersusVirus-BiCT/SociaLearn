@@ -1,4 +1,4 @@
-<div *ngIf="taskService.taskGroup$ | async; let taskgrp">
+<div class="container" *ngIf="taskService.taskGroup$ | async; let taskgrp">
   <h1>{{taskgrp.title}}</h1>
   <div class="flexbox">
     <mat-card *ngFor="let task of taskgrp.tasks; let i = index">
@@ -36,4 +36,7 @@
       </mat-card-footer>
     </mat-card>
   </div>
+  <aside>
+    <sl-qa></sl-qa>
+  </aside>
 </div>

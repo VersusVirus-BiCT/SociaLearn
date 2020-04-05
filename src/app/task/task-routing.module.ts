@@ -15,6 +15,10 @@ const routes: Routes = [
     component: EntryComponent,
   },
   {
+    path: 'entry',
+    component: EntryComponent,
+  },
+  {
     path: 'tasks/:id',
     component: TasksComponent
   }

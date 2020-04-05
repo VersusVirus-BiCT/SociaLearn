@@ -1,4 +1,4 @@
-# Workshop Manager-Frontend
+# SociaLearn
 
 Here lives an application made to offer workshops to students. It environment alowes it to save stuff in a database and to send mails to the users when needed.
 
