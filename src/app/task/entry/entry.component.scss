@@ -12,3 +12,37 @@
 .fill {
   flex: 1;
 }
+
+.button-delete, .button-delete-card {
+  color: red;
+}
+
+.button-edit {
+  color: cornflowerblue;
+}
+
+.button-add {
+  color: darkgoldenrod;
+}
+
+.button-save {
+  color: green;
+}
+
+.mat-card{
+  margin-bottom: 15px;
+  
+  .button-delete-card {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.controls-div {
+  text-align: center;
+
+  button:last-child {
+    margin-left: 15px;
+  }
+}
