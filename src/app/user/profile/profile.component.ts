@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { User } from '../models/user';
 import { UserState } from '../state/user.state';
@@ -10,7 +10,7 @@ import { AchievementType } from '../../achievement/enums/achievement-type';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements AfterViewInit {
+export class ProfileComponent implements OnInit {
 
   public user: User;
 
@@ -20,7 +20,7 @@ export class ProfileComponent implements AfterViewInit {
     this.store.select(UserState.activeUser).subscribe(u => this.user = u)
   }
 
-  public ngAfterViewInit(): void {
+  public ngOnInit(): void {
     if (!this.user.achievements.find(a => a.id === AchievementType.VISIT_PROFILE_PAGE)) {
       this.store.dispatch(new UserActions.EarnAchievement(AchievementType.VISIT_PROFILE_PAGE))
     }

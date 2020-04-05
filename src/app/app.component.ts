@@ -5,6 +5,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {UserService} from './user/services/user.service';
 import {Store} from '@ngxs/store';
 import {UserActions} from './user/state/user.actions';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class AppComponent {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private userService: UserService,
-    private store: Store
+    private store: Store,
+    private rotuer: Router
   ) {
     this.translate.setDefaultLang('de');
     this.matIconRegistry.addSvgIcon('correct', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/correct.svg'))
@@ -31,5 +33,9 @@ export class AppComponent {
     this.userService.getUser(1).subscribe(user => {
       this.store.dispatch(new UserActions.Login(user));
     });
+  }
+
+  getUrl(): boolean {
+    return this.rotuer.url.includes('task')
   }
 }

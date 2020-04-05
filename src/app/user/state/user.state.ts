@@ -55,7 +55,7 @@ export class UserState {
   }
 
   @Action(UA.SaveUser)
-  public saveUser({ user }: UA.SaveUser): void {
+  public saveUser(_: StateContext<UserStateModel>, { user }: UA.SaveUser): void {
     this.userService.putUser(user);
   }
 

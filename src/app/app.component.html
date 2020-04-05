@@ -9,10 +9,10 @@
         <a routerLink="/user/profile" routerLinkActive="active">Profile</a>
       </li>
       <li>
-        <a routerLink="/task/board" routerLinkActive="active">Taskboard</a>
+        <a routerLink="/task/board" [class.active]="getUrl()">Taskboard</a>
       </li>
       <li>
-        <a routerLink="/ranking/leaderboard" routerLinkActive="active">Leaderboard</a>
+        <a routerLink="/ranking/leaderboard" routerLinkActive="active" >Leaderboard</a>
       </li>
     </ul>
   </nav>
