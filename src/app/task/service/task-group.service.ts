@@ -191,6 +191,14 @@ export class TaskGroupService {
   }
 
   public storeTaskGroup(taskGroup: TaskGroup): void{
-    this.alltaskgroups[taskGroup.id] = taskGroup;
+    this.alltaskgroups[taskGroup.id - 1] = taskGroup;
+  }
+
+  public createTaskGroup(taskGroup: TaskGroup): void {
+    this.alltaskgroups.push(taskGroup);
+  }
+
+  public deleteTaskGroup(taskGroup: TaskGroup): void {
+    this.alltaskgroups.splice(taskGroup.id - 1, 1);
   }
 }

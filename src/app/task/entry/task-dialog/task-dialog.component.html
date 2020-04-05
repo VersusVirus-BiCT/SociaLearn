@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Create Task</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Titel</mat-label>
+    <input matInput [(ngModel)]="task.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="task.description">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Points</mat-label>
+    <input matInput type="number" [(ngModel)]="task.points">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>{{ (data.type === 'edit') ? 'Close' : 'Cancel' }}</button>
+  <button mat-button *ngIf="data.type === 'add'" [mat-dialog-close]="this.task">Add</button>
+</mat-dialog-actions>

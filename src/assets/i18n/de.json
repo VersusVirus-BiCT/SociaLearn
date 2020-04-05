@@ -1,6 +1,6 @@
 {
     "test": "Hallo ich bin ein Material Knopf in {{ page }} geschrieben in Deutsch",
     "task": {
-      "title": "Aufgaben"
+      "title": "Tasks"
     }
 }
