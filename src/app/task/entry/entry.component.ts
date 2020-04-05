@@ -14,7 +14,6 @@ import {ActivatedRoute} from '@angular/router';
 export class EntryComponent implements OnInit {
 
   public taskGroupId: number;
-  public user = {role: 'school'};
   public taskGroup: TaskGroup;
   public taskTypes: TaskType[];
   public lastTaskId : number;
@@ -25,8 +24,9 @@ export class EntryComponent implements OnInit {
     taskTypeService.loadTaskTypes();
     taskGroupService.taskGroups$.subscribe((taskGroups : TaskGroup[]) => {
       this.taskGroup = taskGroups.find(tt => tt.id === this.taskGroupId);
-      if(this.taskGroup)
-      this.lastTaskId = this.taskGroup.tasks.length;
+      if(this.taskGroup) {
+        this.lastTaskId = this.getNextId(this.taskGroup.tasks);
+      }
     });
     taskTypeService.taskTypes$.subscribe((taskTypes: TaskType[]) => {
       this.taskTypes = taskTypes;
@@ -45,8 +45,9 @@ export class EntryComponent implements OnInit {
   }
 
   public addSolution(task: Task): void{
+
     task.solution = (typeof(task.solution) !== 'object' || task.solution === null) ? [] : task.solution;
-    task.solution.push({})
+    task.solution.push({id: this.getNextId(task.solution), correct: true})
   }
 
   public removeSolution(task: Task, solution: object): void {
@@ -59,7 +60,7 @@ export class EntryComponent implements OnInit {
 
   public addTask(taskGroup: TaskGroup): void {
     this.lastTaskId++;
-    console.log(taskGroup.tasks.push({
+    taskGroup.tasks.push({
       id: this.lastTaskId,
       name: 'Test',
       description: 'Test',
@@ -67,12 +68,38 @@ export class EntryComponent implements OnInit {
       question: null,
       solution: null,
       type: this.taskTypes[0]
-    }));
+    });
   }
 
-  public storeTaskGroup(taskGroup: TaskGroup): void{
-    console.log(taskGroup);
-    this.taskGroupService.storeTaskGroup(taskGroup);
+  public setSolutionCorrectness(selected: any, solution: any): void {
+    if(selected === 'true') {
+      solution.correct = true;
+    } else {
+      solution.correct = false;
+    }
+  }
+
+  private getNextId(object: any[]): number {
+    object = object.sort((t, s) => {
+        if (t.id < s.id) {
+          return 1
+        } else {
+          return -1
+        }
+      }
+    );
+    if(object.length) {
+      return object[0].id + 1;
+    }
+    return 1;
+  }
+
+  public storeTaskGroup(): void{
+    this.taskGroupService.storeTaskGroup(this.taskGroup);
+  }
+
+  public logTaskGroup():void {
+    console.log(this.taskGroup);
   }
 }
 

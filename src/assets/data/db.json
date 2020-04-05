@@ -6,32 +6,16 @@
       "purpose": "Math Aufgaben Einfach",
       "tasks": [
         {
-          "id": 1,
-          "name": "Addition 1",
-          "description": "Löse die Addition",
-          "question": "5+7",
-          "solution": [
-            {
-              "id": 1,
-              "value": "A",
-              "correct": true
-            },
-            {
-              "id": 2,
-              "value": "B",
-              "correct": true
-            },
-            {
-              "id": 3,
-              "value": "C",
-              "correct": false
-            }
-          ],
+          "id": 3,
+          "name": "Subtraktion 1",
+          "description": "Löse die Subtraktion",
+          "question": "23-8",
+          "solution": "15",
           "points": 1,
           "type": {
-            "id": 1,
-            "name": "Multiple Choice",
-            "solutionType": "checkbox"
+            "id": 4,
+            "name": "Text",
+            "solutionType": "text"
           }
         },
         {
@@ -64,16 +48,32 @@
           }
         },
         {
-          "id": 3,
-          "name": "Subtraktion 1",
-          "description": "Löse die Subtraktion",
-          "question": "23-7",
-          "solution": 16,
+          "id": 1,
+          "name": "Addition 1",
+          "description": "Löse die Addition",
+          "question": "5+7",
+          "solution": [
+            {
+              "id": 1,
+              "value": "A",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "value": "B",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "value": "C",
+              "correct": false
+            }
+          ],
           "points": 1,
           "type": {
-            "id": 4,
-            "name": "Text",
-            "solutionType": "text"
+            "id": 1,
+            "name": "Multiple Choice",
+            "solutionType": "checkbox"
           }
         }
       ]
