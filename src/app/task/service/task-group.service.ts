@@ -32,8 +32,8 @@ export class TaskGroupService {
       .subscribe((taskgroup: TaskGroup) => this._taskGroup.next(taskgroup));
   }
 
-  public add(taskGroup: TaskGroup): void{
-    this.http.post(environment.API_URL+'/taskgroup', {purpose:'Etwas',title:'Anderes',tasks: []}).subscribe(
+  public storeTaskGroup(taskGroup: TaskGroup): void{
+    this.http.post(environment.API_URL+'/taskgroup', taskGroup).subscribe(
       o => console.log(taskGroup,o)
     );
   }

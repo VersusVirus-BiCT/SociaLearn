@@ -1,0 +1,10 @@
+.row {
+  flex-wrap: wrap;
+}
+
+.row > .entry{
+  order: 1;
+  width: 500px;
+  max-width: 100%;
+  margin: 10px;
+}

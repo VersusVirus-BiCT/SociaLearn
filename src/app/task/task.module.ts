@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
+import {MaterialModule} from '../core/material/material.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {FormsModule} from '@angular/forms';
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ]
 })
 export class TaskModule { }
