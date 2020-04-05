@@ -188,7 +188,7 @@ export class TaskGroupService {
   }
 
   public loadTaskGroup(id: any): void{
-    of(this.alltaskgroups[id])
+    of(this.alltaskgroups[id -1])
     .subscribe((taskgroup: TaskGroup) => this._taskGroup.next(taskgroup));
   }
 

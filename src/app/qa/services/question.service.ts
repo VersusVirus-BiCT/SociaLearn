@@ -48,8 +48,8 @@ export class QuestionService {
             "achievements": [],
             "tasks": [],
             "karma": {
-              "experience": "8500",
-              "maxExperience": "10000",
+              "experience": 8500,
+              "maxExperience": 10000,
               "level": 9
             }
           }
