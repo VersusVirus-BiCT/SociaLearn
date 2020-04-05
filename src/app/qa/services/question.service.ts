@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {Question} from '../models/question';
+import { Observable, of } from 'rxjs';
+import { Question } from '../models/question';
+import { USERS } from '../../app.mock';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
 
-  public allQuestions: Question[] =[
+  public allQuestions: Question[] = [
     {
       'question': 'What is the meaning of life?',
       'answers': [
@@ -36,35 +37,13 @@ export class QuestionService {
               }
             }
           ],
-          'user': {
-            'id': 4,
-            'username': 'student3',
-            'role': 'Student',
-            'achievements': [],
-            'tasks': [],
-            'karma': {
-              'experience': 8500,
-              'maxExperience': 10000,
-              'level': 9
-            }
-          }
+          user: USERS[3],
         },
         {
           'answer': 'Try running around the house.',
           'accepted': false,
           'votes': [],
-          'user': {
-            'id': 3,
-            'username': 'student2',
-            'role': 'Student',
-            'achievements': [],
-            'tasks': [],
-            'karma': {
-              'experience': 6300,
-              'maxExperience': 10000,
-              'level': 9
-            }
-          }
+          user: USERS[3],
         },
         {
           'answer': 'Forget about team spirit.',
@@ -76,18 +55,7 @@ export class QuestionService {
               }
             }
           ],
-          'user': {
-            'id': 3,
-            'username': 'student2',
-            'role': 'Student',
-            'achievements': [],
-            'tasks': [],
-            'karma': {
-              'experience': 6300,
-              'maxExperience': 10000,
-              'level': 9
-            }
-          }
+          user: USERS[2],
         }
       ]
     },
@@ -119,18 +87,7 @@ export class QuestionService {
               }
             }
           ],
-          'user': {
-            'id': 4,
-            'username': 'student3',
-            'role': 'Student',
-            'achievements': [],
-            'tasks': [],
-            'karma': {
-              'experience': 8500,
-              'maxExperience': 10000,
-              'level': 9
-            }
-          }
+          user: USERS[3],
         }
       ]
     }
