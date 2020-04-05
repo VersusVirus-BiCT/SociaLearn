@@ -9,15 +9,18 @@ export class AchievementService {
   private achievements: Achievement[] = [
     {
       id: 1,
-      title: 'First lession learned'
+      title: 'First lession learned',
+      icon: 'grade',
     },
     {
       id: 2,
-      title: 'Visit profile page'
+      title: 'Visit profile page',
+      icon: 'account_circle',
     },
     {
       id: 3,
-      title: 'Find yourself in the leaderboard'
+      title: 'Find yourself in the leaderboard',
+      icon: 'visibility',
     }
   ];
 
