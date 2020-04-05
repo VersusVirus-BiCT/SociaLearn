@@ -18,7 +18,7 @@ export class EntryComponent implements OnInit {
   public taskTypes: TaskType[];
   public lastTaskId : number;
 
-  constructor(private route: ActivatedRoute, taskGroupService: TaskGroupService, taskTypeService: TaskTypeService) {
+  constructor(private route: ActivatedRoute, private taskGroupService: TaskGroupService, taskTypeService: TaskTypeService) {
     this.taskGroupId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
     taskGroupService.loadTaskGroups();
     taskTypeService.loadTaskTypes();
@@ -67,6 +67,11 @@ export class EntryComponent implements OnInit {
       solution: null,
       type: this.taskTypes[0]
     });
+  }
+
+  public storeTaskGroup(taskGroup: TaskGroup): void{
+    console.log(taskGroup);
+    this.taskGroupService.storeTaskGroup(taskGroup);
   }
 }
 
