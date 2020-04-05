@@ -33,7 +33,7 @@ export class TaskGroupService {
   }
 
   public storeTaskGroup(taskGroup: TaskGroup): void{
-    this.http.post(environment.API_URL+'/taskgroup', taskGroup).subscribe(
+    this.http.put(environment.API_URL+'/taskgroup/' + taskGroup.id, taskGroup).subscribe(
       o => console.log(taskGroup,o)
     );
   }
