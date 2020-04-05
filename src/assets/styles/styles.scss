@@ -88,6 +88,31 @@ button {
   cursor: pointer;
 }
 
+
+.button-delete, .button-delete-card {
+  color: red;
+}
+
+.button-edit {
+  color: cornflowerblue;
+}
+
+.button-add {
+  color: darkgoldenrod;
+}
+
+.button-save {
+  color: green;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
 @for $i from 1 through 100 {
   .width-#{$i} {
     width: 1% * $i;

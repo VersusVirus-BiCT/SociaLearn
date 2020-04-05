@@ -4,6 +4,29 @@
   flex-direction: row;
   flex-wrap: wrap;
 
+  .question-section {
+    margin-top: 20px;
+
+    p mat-icon {
+      margin-right: 15px;
+    }
+
+    .question-holder {
+      width: 100%;
+    }
+  }
+
+  .mat-card-footer{
+    mat-icon {
+      float: right;
+      margin-right: 15px;
+    }
+
+    mat-icon:first-child {
+      float: left;
+    }
+  }
+
   .flexbox {
     width: 70%;
     display: flex;
