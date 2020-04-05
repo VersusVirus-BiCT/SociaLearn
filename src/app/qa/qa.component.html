@@ -2,10 +2,10 @@
   <h2>Classroom Frage 1</h2>
 </div>
 <mat-accordion>
-  <mat-expansion-panel>
+  <mat-expansion-panel *ngFor="let i of [1,2,3,4,5]">
     <mat-expansion-panel-header  class="question">
       <mat-panel-title>
-        <span class="material-icons">
+        <span profile-icon class="material-icons">
           account_circle
         </span>
       </mat-panel-title>
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="profile column center">
-            <span class="material-icons">
+            <span class="material-icons" profile-icon>
               account_circle
             </span>
           </div>
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="profile column center">
-            <span class="material-icons last-profile-icon">
+            <span class="material-icons last-profile-icon" profile-icon>
               account_circle
             </span>
           </div>
