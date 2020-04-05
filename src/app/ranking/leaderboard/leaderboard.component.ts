@@ -30,7 +30,7 @@ export class LeaderboardComponent implements OnInit {
 
   @ViewChild(MatSort, { static: false })
   public set sort(sort: MatSort) {
-    this.users.sort = sort;
+    if (this.users) this.users.sort = sort;
   }
 
   constructor(
