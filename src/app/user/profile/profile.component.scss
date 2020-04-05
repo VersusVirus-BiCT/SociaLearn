@@ -110,6 +110,40 @@ article {
   font-size: 6em;
 }
 
+.achievement-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  .achievement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid mat-color($bict-primary);
+    border-radius: 5px;
+    padding: 1em;
+    width: 150px;
+    box-sizing: border-box;
+
+    span {
+      margin-top: 0.5em;
+    }
+
+    mat-icon {
+      color: mat-color($bict-primary);
+    }
+  }
+
+  .achievement + .achievement {
+    margin-left: 1em;
+  }
+}
+
 /*Profile Information ฅ•ω•ฅ*/
 // .profile-information {
 //   display: flex;

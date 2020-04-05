@@ -43,9 +43,10 @@
       <h2>Achievements</h2>
     </mat-card-header>
     <mat-card-content>
-      <ul>
-        <li *ngFor="let achievement of user.achievements">
-          {{achievement.title}}
+      <ul class="achievement-list">
+        <li *ngFor="let achievement of user.achievements" class="achievement">
+          <mat-icon *ngIf="achievement.icon">{{achievement.icon}}</mat-icon>
+          <span>{{achievement.title}}</span>
         </li>
       </ul>
     </mat-card-content>
