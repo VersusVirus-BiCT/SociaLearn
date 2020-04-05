@@ -24,9 +24,6 @@ export class EntryComponent implements OnInit {
     taskTypeService.loadTaskTypes();
     taskGroupService.taskGroups$.subscribe((taskGroups : TaskGroup[]) => {
       this.taskGroup = taskGroups.find(tt => tt.id === this.taskGroupId);
-      if(this.taskGroup) {
-        this.lastTaskId = this.getNextId(this.taskGroup.tasks);
-      }
     });
     taskTypeService.taskTypes$.subscribe((taskTypes: TaskType[]) => {
       this.taskTypes = taskTypes;
@@ -61,7 +58,7 @@ export class EntryComponent implements OnInit {
   public addTask(taskGroup: TaskGroup): void {
     this.lastTaskId++;
     taskGroup.tasks.push({
-      id: this.lastTaskId,
+      id: this.getNextId(this.taskGroup.tasks),
       name: 'Test',
       description: 'Test',
       points: 0,
