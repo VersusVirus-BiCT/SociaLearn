@@ -16,7 +16,18 @@
     }
   }
 
+  .answers-section mat-radio-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
   .mat-card-footer{
+    bottom: 15px;
+    position: absolute;
+    width: calc(100% - 15px);
+    padding: 15px;
+
     mat-icon {
       float: right;
       margin-right: 15px;

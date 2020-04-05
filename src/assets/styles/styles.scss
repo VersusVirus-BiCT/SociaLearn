@@ -88,6 +88,9 @@ button {
   cursor: pointer;
 }
 
+.button-delete, .button-delete-card, .button-edit, .button-add, .button-save {
+  cursor: pointer;
+}
 
 .button-delete, .button-delete-card {
   color: red;

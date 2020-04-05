@@ -9,7 +9,7 @@
         <span class="question-holder">{{task.question}}</span>
       </mat-card-content>
 
-      <mat-card-actions>
+      <mat-card-actions class="answers-section">
         <mat-form-field *ngIf="task.type.solutionType == 'text'" >
           <mat-label>{{'tasks.answer.text' | translate}}</mat-label>
           <input matInput [(ngModel)]="answer[i]"  placeholder="{{'tasks.answer.text' | translate}}">
@@ -33,7 +33,7 @@
       </mat-card-actions>
 
       <mat-card-footer>
-        <mat-icon class="button-add" (click)="checkAnswer(task, i)">check_circle</mat-icon>
+        <mat-icon class="button button-add" (click)="checkAnswer(task, i)">check_circle</mat-icon>
         <mat-icon class="error" *ngIf="correct[i] != undefined && correct[i]==false">error</mat-icon>
         <mat-icon class="success" *ngIf="correct[i] != undefined && correct[i]==true">done</mat-icon>
       </mat-card-footer>
