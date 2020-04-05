@@ -1,1 +1,58 @@
-<p>entry works!</p>
+<h1>{{ (user.role == "teacher") ? "Erfassung: " : "" }}{{ taskGroup.purpose }}</h1>
+<div class="row">
+  <mat-card *ngFor="let task of taskGroup.tasks" class="entry">
+    <mat-card-title>{{ task.name }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ task.description }}
+    </mat-card-subtitle>
+    <mat-card class="row">
+      <mat-card-title>Question</mat-card-title>
+      <mat-form-field >
+        <mat-label>Question</mat-label>
+        <input type="text" matInput placeholder="Type text here..." [ngModel]="task.question"/>
+      </mat-form-field>
+    </mat-card>
+    <mat-card class="row">
+      <mat-card-title>Solution</mat-card-title>
+      <mat-form-field>
+        <mat-label>Solution-Type</mat-label>
+        <mat-select (ngModelChange)="taskTypeChange($event, task)" [(ngModel)]="task.type.id">
+          <mat-option *ngFor="let type of taskTypes" [value]="type.id">
+            {{type.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-card *ngIf="task.type.solutionType == 'text'" class="row">
+        <mat-form-field>
+          <mat-label>Solution</mat-label>
+          <input type="text" matInput placeholder="Type text here..." [ngModel]="task.solution"/>
+        </mat-form-field>
+      </mat-card>
+      <mat-card *ngIf="task.type.solutionType == 'radio' || task.type.solutionType == 'checkbox' || task.type.solutionType == 'select'" >
+        <p>Manage Answers</p>
+        <div *ngFor="let solution of task.solution" class="row">
+          <mat-form-field>
+            <mat-label>Fieldvalue</mat-label>
+            <input matInput [ngModel]="solution.value">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Is Correct?</mat-label>
+            <mat-select [ngModel]="solution.correct+''">
+              <mat-option value="true">Yes</mat-option>
+              <mat-option value="false">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button (click)="removeSolution(task, solution)"><mat-icon>delete</mat-icon></button>
+        </div>
+        <button mat-raised-button (click)="addSolution(task)">Add</button>
+      </mat-card>
+    </mat-card>
+    <mat-card-actions>
+      <button mat-raised-button (click)="removeTask(task)"><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+<button mat-raised-button (click)="addTask(taskGroup)">Add</button>
+
+<button mat-raised-button (click)="storeTaskGroup(taskGroup)">{{'Speichern' | translate}}</button>

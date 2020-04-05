@@ -1,10 +1,13 @@
+import { TaskType } from './task-type';
+
 export interface Task {
 
-  id: bigint;
+  id: number;
   name: string;
   description: string;
-  work: string;
-  solution: string;
+  question: string;
+  solution: any;
   points: number;
+  type: TaskType;
 
 }
