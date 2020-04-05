@@ -14,7 +14,6 @@ import {ActivatedRoute} from '@angular/router';
 export class EntryComponent implements OnInit {
 
   public taskGroupId: number;
-  public user = {role: 'school'};
   public taskGroup: TaskGroup;
   public taskTypes: TaskType[];
   public lastTaskId : number;
@@ -59,7 +58,7 @@ export class EntryComponent implements OnInit {
 
   public addTask(taskGroup: TaskGroup): void {
     this.lastTaskId++;
-    console.log(taskGroup.tasks.push({
+    taskGroup.tasks.push({
       id: this.lastTaskId,
       name: 'Test',
       description: 'Test',
@@ -67,7 +66,7 @@ export class EntryComponent implements OnInit {
       question: null,
       solution: null,
       type: this.taskTypes[0]
-    }));
+    });
   }
 }
 

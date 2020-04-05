@@ -1,4 +1,4 @@
-<h1>{{ (user.role == "teacher") ? "Erfassung: " : "" }}{{ taskGroup.purpose }}</h1>
+<h1>Erfassung {{ taskGroup.purpose }}</h1>
 <div class="row">
   <mat-card *ngFor="let task of taskGroup.tasks" class="entry">
     <mat-card-title>{{ task.name }}</mat-card-title>
@@ -54,3 +54,4 @@
 
 </div>
 <button mat-raised-button (click)="addTask(taskGroup)">Add</button>
+<button (click)="logTaskGroup()">Debug</button>
