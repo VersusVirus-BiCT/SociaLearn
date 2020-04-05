@@ -256,16 +256,24 @@
           "accepted": true,
           "votes": [
             {
-              "type": {"name": "up"}
+              "type": {
+                "name": "up"
+              }
             },
             {
-              "type": {"name": "up"}
+              "type": {
+                "name": "up"
+              }
             },
             {
-              "type": {"name": "up"}
+              "type": {
+                "name": "up"
+              }
             },
             {
-              "type": {"name": "down"}
+              "type": {
+                "name": "down"
+              }
             }
           ],
           "user": {
@@ -305,7 +313,9 @@
           "accepted": false,
           "votes": [
             {
-              "type": {"name":  "down"}
+              "type": {
+                "name": "down"
+              }
             }
           ],
           "user": {
