@@ -9,13 +9,11 @@ export class ProfileIconDirective implements AfterViewInit {
     private elr: ElementRef
   ) { }
 
-  ngAfterViewInit() {
-    console.log('here');
-
+  public ngAfterViewInit(): void {
     this.elr.nativeElement.style.color = this.createRandomHex();
   }
 
-  createRandomHex(): string {
+  public createRandomHex(): string {
     return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
   }
 
