@@ -1,4 +1,11 @@
-<h1>{{'task.title' | translate}}</h1>
+<div class="flexbox">
+  <div class="fill">
+    <h1>{{'task.title' | translate}}</h1>
+  </div>
+  <div>
+    <button mat-raised-button (click)="createTaskGroup()"><mat-icon>add</mat-icon></button>
+  </div>
+</div>
 <div class="flexbox">
   <mat-card *ngFor="let taskGroup of taskGroupService.taskGroups$ | async" >
     <mat-card-title><a [routerLink]="['/task/entry/'+taskGroup.id]">{{taskGroup.title}}</a></mat-card-title>
