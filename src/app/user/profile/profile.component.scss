@@ -1,0 +1,72 @@
+@import "theme";
+
+/*SCSS Variables ฅ•ω•ฅ*/
+$color-standard: #efefef;
+
+/*Fonts and stuff ฅ•ω•ฅ*/
+h1, h2, h3, h4, h5, h6 {
+  color: $color-standard;
+  text-transform: uppercase;
+}
+
+h4{
+  color: $color-standard;
+  font-size: 1.5em;
+}
+
+/*Profile Header ฅ•ω•ฅ*/
+.profile-header{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    flex-grow: 1;
+    align-items: center;
+    border-bottom: 3px solid #efefef;
+
+   h1{
+     border-bottom: none;
+     align-items: flex-end;
+   }
+}
+
+/*Profile Information ฅ•ω•ฅ*/
+.profile-information{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: stretch;
+  flex-grow: 3;
+
+  .profile-name{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid $color-standard;
+    padding-bottom: 0px;
+    line-height: 0.1em;
+    flex-grow: 1;
+  }
+
+  .profile-experience{
+     flex-grow: 1;
+  }
+
+  .profile-rank{
+     flex-grow: 1;
+  }
+}
+
+/*Profile Tasks ฅ•ω•ฅ*/
+.profile-tasks{
+  h4{
+    font-weight: 400;
+  }
+
+  .profile-task{
+
+  }
+}
+
+/*Profile Achievements ฅ•ω•ฅ*/
+.profile-achievements{
+
+}
