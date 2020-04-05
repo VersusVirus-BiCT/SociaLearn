@@ -12,12 +12,12 @@ export class TaskGroupService {
     {
       'id': 1,
       'title': 'Math',
-      'purpose': 'Math Aufgaben Einfach',
+      'purpose': 'Math exercises easy',
       'tasks': [
         {
           'id': 3,
-          'name': 'Subtraktion 1',
-          'description': 'Löse die Subtraktion',
+          'name': 'Subtraction 1',
+          'description': 'Solve the subtraction',
           'question': '23-8',
           'solution': '15',
           'points': 1,
@@ -29,23 +29,23 @@ export class TaskGroupService {
         },
         {
           'id': 2,
-          'name': 'Addition 2',
-          'description': 'Löse die Addition',
+          'name': 'Addition 1',
+          'description': 'Solve the addition',
           'question': '23+7',
           'solution': [
             {
               'id': 1,
-              'value': 'A',
+              'value': '30',
               'correct': true
             },
             {
               'id': 2,
-              'value': 'B',
+              'value': '31',
               'correct': false
             },
             {
               'id': 3,
-              'value': 'C',
+              'value': '29',
               'correct': false
             }
           ],
@@ -58,23 +58,23 @@ export class TaskGroupService {
         },
         {
           'id': 1,
-          'name': 'Addition 1',
-          'description': 'Löse die Addition',
-          'question': '5+7',
+          'name': 'Prime numbers',
+          'description': 'Which numbers are prime numbers?',
+          'question': '5*7',
           'solution': [
             {
               'id': 1,
-              'value': 'A',
+              'value': '7',
               'correct': true
             },
             {
               'id': 2,
-              'value': 'B',
+              'value': '17',
               'correct': true
             },
             {
               'id': 3,
-              'value': 'C',
+              'value': '21',
               'correct': false
             }
           ],
@@ -90,40 +90,56 @@ export class TaskGroupService {
     {
       'id': 2,
       'title': 'Java',
-      'purpose': 'Java Aufgaben Einfach',
+      'purpose': 'Java exercises easy',
       'tasks': [
         {
           'id': 4,
-          'name': 'Java Variablen',
-          'description': 'Beantworte die Frage',
-          'question': 'Was ist eine Variable',
-          'solution': 'Ein Platzhalter für Werte',
+          'name': 'Java variables',
+          'description': 'Answer the question',
+          'question': 'What is a variable?',
+          'solution': [
+            {
+              'id': 1,
+              'value': 'a function',
+              'correct': false
+            },
+            {
+              'id': 2,
+              'value': 'a placeholder for data',
+              'correct': true
+            },
+            {
+              'id': 3,
+              'value': 'an alias for loop',
+              'correct': false
+            }
+          ],
           'points': 1,
           'type': {
-            'id': 4,
-            'name': 'Text',
-            'solutionType': 'text'
+            'id': 2,
+            'name': 'Single Choice',
+            'solutionType': 'select'
           }
         },
         {
           'id': 5,
-          'name': 'Java Keywords',
-          'description': 'Beantworte die Frage',
-          'question': 'Was bedeutet static',
+          'name': 'Java keywords',
+          'description': 'Answer the question',
+          'question': 'What does int mean',
           'solution': [
             {
               'id': 1,
-              'value': 'A',
-              'correct': true
+              'value': 'Non editable variable',
+              'correct': false
             },
             {
               'id': 2,
-              'value': 'B',
+              'value': 'Internal Server Error',
               'correct': false
             },
             {
               'id': 3,
-              'value': 'C',
+              'value': 'Datatype',
               'correct': false
             }
           ],
@@ -136,23 +152,23 @@ export class TaskGroupService {
         },
         {
           'id': 6,
-          'name': 'Java Prinzipien',
-          'description': 'Beantworte die Frage',
-          'question': 'Wofür steht OO',
+          'name': 'Java principles',
+          'description': 'Answer the question',
+          'question': 'What does OOP mean',
           'solution': [
             {
               'id': 1,
-              'value': 'A',
-              'correct': true
-            },
-            {
-              'id': 2,
-              'value': 'B',
+              'value': 'Only Operators permitted',
               'correct': false
             },
             {
+              'id': 2,
+              'value': 'Object oriented programming',
+              'correct': true
+            },
+            {
               'id': 3,
-              'value': 'C',
+              'value': 'observable object principle',
               'correct': false
             }
           ],
@@ -165,7 +181,7 @@ export class TaskGroupService {
         }
       ]
     }
-  ]
+  ];
 
   private _taskGroups: BehaviorSubject<TaskGroup[]> = new BehaviorSubject<TaskGroup[]>([]);
   public readonly taskGroups$: Observable<TaskGroup[]> = this._taskGroups.asObservable();
