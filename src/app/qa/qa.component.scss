@@ -29,8 +29,24 @@ p {
   }
 }
 
+.mat-expansion-panel-header-description{
+  width: 100%;
+}
+
 .mat-expansion-panel-header-title{
-  width: 20px;
+  width: 30px;
+}
+
+.icon-holder{
+  flex: 1 1 0;
+
+  .profile {
+    margin-right: 15px;
+  }
+}
+
+.answer-text p{
+  width: 100%;
 }
 
 .question .material-icons{
