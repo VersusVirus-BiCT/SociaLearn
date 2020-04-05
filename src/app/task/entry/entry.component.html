@@ -4,14 +4,15 @@
       <h1>Erfassung {{ taskGroup.title }}</h1>
       <p>{{ taskGroup.purpose }}</p>
     </div>
-    <div>
-      <button mat-raised-button (click)="deleteGroup()"><mat-icon>delete</mat-icon></button>
-      <button mat-raised-button (click)="editGroup()"><mat-icon>edit</mat-icon></button>
+    <div class="controls-div">
+      <button class="button-delete" mat-raised-button (click)="deleteGroup()"><mat-icon>delete</mat-icon></button>
+      <button class="button-edit" mat-raised-button (click)="editGroup()"><mat-icon>edit</mat-icon></button>
     </div>
   </div>
+
   <div class="row">
     <mat-card *ngFor="let task of taskGroup.tasks" class="entry">
-      <mat-card-title>{{ task.name }}<mat-icon (click)="editTask(task)">edit</mat-icon></mat-card-title>
+      <mat-card-title>{{ task.name }}<mat-icon class="button-edit" (click)="editTask(task)">edit</mat-icon></mat-card-title>
       <mat-card-subtitle>
         {{ task.description }}
       </mat-card-subtitle>
@@ -52,20 +53,24 @@
                 <mat-option value="false">{{ 'No' | translate }}</mat-option>
               </mat-select>
             </mat-form-field>
-            <button mat-button (click)="removeSolution(task, solution)"><mat-icon>delete</mat-icon></button>
+            <button class="button-delete" mat-button (click)="removeSolution(task, solution)"><mat-icon>delete</mat-icon></button>
           </div>
-          <button mat-raised-button (click)="addSolution(task)">{{ 'Add' | translate }}</button>
+          <button class="button-add" mat-raised-button (click)="addSolution(task)">{{ 'Add' | translate }}</button>
         </mat-card>
       </mat-card>
       <mat-card-actions>
-        <button mat-raised-button (click)="removeTask(task)"><mat-icon>delete</mat-icon></button>
+        <button class="button-delete button-delete-card" mat-raised-button (click)="removeTask(task)"><mat-icon>delete</mat-icon></button>
       </mat-card-actions>
     </mat-card>
   </div>
-  <button mat-raised-button (click)="addTask(taskGroup)">{{ 'Add Task' | translate }}</button>
 
-  <button mat-raised-button (click)="storeTaskGroup()">{{'Save TaskGroup' | translate}}</button>
+  <div class="controls-div">
+    <button class="button-add" mat-raised-button (click)="addTask(taskGroup)">{{ 'Add Task' | translate }}</button>
+
+    <button class="button-save" mat-raised-button (click)="storeTaskGroup()">{{'Save TaskGroup' | translate}}</button>
+  </div>
 </div>
+
 <div *ngIf="!taskGroupId">
   <h1>Erfassung</h1>
   <mat-card class="entry">
@@ -77,6 +82,6 @@
       <mat-label>{{ 'Purpose' | translate}}</mat-label>
       <input matInput [(ngModel)]="taskGroup.purpose">
     </mat-form-field>
-    <button mat-raised-button (click)="addGroup()">Add</button>
+    <button class="button-add" mat-raised-button (click)="addGroup()">Add</button>
   </mat-card>
 </div>
