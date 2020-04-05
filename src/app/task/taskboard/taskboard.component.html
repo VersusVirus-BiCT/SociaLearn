@@ -1,7 +1,7 @@
 <h1>{{'task.title' | translate}}</h1>
 <div class="flexbox">
   <mat-card *ngFor="let taskGroup of taskGroupService.taskGroups$ | async" >
-    <mat-card-title><a [routerLink]="['/task/tasks/'+taskGroup.id]">{{taskGroup.title}}</a></mat-card-title>
+    <mat-card-title><a [routerLink]="['/task/entry/'+taskGroup.id]">{{taskGroup.title}}</a></mat-card-title>
     <mat-card-content>
       <a [routerLink]="['/task/tasks/'+taskGroup.id]">
         <img src="https://die-erfolgskomplizen.de/wp-content/uploads/2018/02/bild-platzhalter-300x200px.gif">
