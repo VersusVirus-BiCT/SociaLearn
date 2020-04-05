@@ -1,5 +1,5 @@
 <div class="container" *ngIf="taskService.taskGroup$ | async; let taskgrp">
-  <h1>{{taskgrp.title}}</h1>
+  <h1 class="width-100">{{taskgrp.title}}</h1>
   <div class="flexbox">
     <mat-card *ngFor="let task of taskgrp.tasks; let i = index">
       <mat-card-title>{{task.name}}</mat-card-title>
