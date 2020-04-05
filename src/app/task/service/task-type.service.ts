@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import {TaskType} from '../model/task-type';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,38 +17,38 @@ export class TaskTypeService {
   });
   public readonly taskType$: Observable<TaskType> = this._taskType.asObservable();
 
-  allTaskTypes: TaskType[] =
+  public allTaskTypes: TaskType[] =
   [
     {
-      "id": 1,
-      "name": "Multiple Choice",
-      "solutionType": "checkbox"
+      'id': 1,
+      'name': 'Multiple Choice',
+      'solutionType': 'checkbox'
     },
     {
-      "id": 2,
-      "name": "Single Choice Radio",
-      "solutionType": "radio"
+      'id': 2,
+      'name': 'Single Choice Radio',
+      'solutionType': 'radio'
     },
     {
-      "id": 3,
-      "name": "Single Choice Select",
-      "solutionType": "select"
+      'id': 3,
+      'name': 'Single Choice Select',
+      'solutionType': 'select'
     },
     {
-      "id": 4,
-      "name": "Text",
-      "solutionType": "text"
+      'id': 4,
+      'name': 'Text',
+      'solutionType': 'text'
     }
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  public loadTaskTypes() {
+  public loadTaskTypes(): void {
     of(this.allTaskTypes)
       .subscribe((taskTypes: TaskType[]) => this._taskTypes.next(taskTypes));
   }
 
-  public loadTaskType(id: number){
+  public loadTaskType(id: number): void {
     of(this.allTaskTypes[id -1])
       .subscribe((taskTypes: TaskType) => this._taskType.next(taskTypes));
   }
