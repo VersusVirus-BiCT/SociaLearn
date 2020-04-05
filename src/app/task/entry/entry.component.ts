@@ -7,6 +7,7 @@ import { Task } from '../model/task';
 import {ActivatedRoute, Router} from '@angular/router';
 import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import {TaskgroupDialogComponent} from './taskgroup-dialog/taskgroup-dialog.component';
 
 @Component({
   selector: 'sl-entry',
@@ -64,7 +65,6 @@ export class EntryComponent implements OnInit {
   }
 
   public addSolution(task: Task): void{
-
     task.solution = (typeof(task.solution) !== 'object' || task.solution === null) ? [] : task.solution;
     task.solution.push({id: this.getNextId(task.solution), correct: true})
   }
@@ -102,16 +102,21 @@ export class EntryComponent implements OnInit {
   }
 
   public setSolutionCorrectness(selected: any, solution: any): void {
-    if(selected === 'true') {
-      solution.correct = true;
-    } else {
-      solution.correct = false;
-    }
+    solution.correct = selected === 'true';
   }
 
   public addGroup(): void {
     this.taskGroupService.createTaskGroup(this.taskGroup);
     this.router.navigate(['/task/entry/' + this.taskGroup.id])
+  }
+
+  public editGroup(): void {
+    this.dialog.open(TaskgroupDialogComponent, {data:{taskGroup: this.taskGroup}});
+  }
+
+  public deleteGroup(): void {
+    this.taskGroupService.deleteTaskGroup(this.taskGroup);
+    this.router.navigate(['/task/taskboard']);
   }
 
   private getNextId(object: any[]): number {
@@ -125,10 +130,6 @@ export class EntryComponent implements OnInit {
 
   public storeTaskGroup(): void{
     this.taskGroupService.storeTaskGroup(this.taskGroup);
-  }
-
-  public logTaskGroup():void {
-    console.log(this.taskGroup);
   }
 }
 

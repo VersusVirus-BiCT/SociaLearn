@@ -22,7 +22,7 @@ export class TaskGroupService {
 
   constructor(private http: HttpClient) { }
 
-  public loadTaskGroups(): void{
+  public loadTaskGroups(): void {
     this.http.get(environment.API_URL + '/taskgroup')
       .subscribe((taskgroups: TaskGroup[]) => this._taskGroups.next(taskgroups));
   }
@@ -32,14 +32,20 @@ export class TaskGroupService {
       .subscribe((taskgroup: TaskGroup) => this._taskGroup.next(taskgroup));
   }
 
-  public storeTaskGroup(taskGroup: TaskGroup): void{
+  public storeTaskGroup(taskGroup: TaskGroup): void {
     this.http.put(environment.API_URL+'/taskgroup/' + taskGroup.id, taskGroup).subscribe(
       o => console.log(taskGroup,o)
     );
   }
 
-  public createTaskGroup(taskGroup: TaskGroup): void{
+  public createTaskGroup(taskGroup: TaskGroup): void {
     this.http.post(environment.API_URL+'/taskgroup', taskGroup).subscribe(
+      o => console.log(taskGroup,o)
+    );
+  }
+  
+  public deleteTaskGroup(taskGroup: TaskGroup): void {
+    this.http.delete(environment.API_URL+'/taskgroup/' + taskGroup.id).subscribe(
       o => console.log(taskGroup,o)
     );
   }

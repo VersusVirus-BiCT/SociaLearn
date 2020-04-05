@@ -155,32 +155,6 @@
           }
         }
       ]
-    },
-    {
-      "id": 3,
-      "purpose": "dsadas",
-      "tasks": [
-        {
-          "id": 1,
-          "name": "Test2",
-          "description": "dasdsa",
-          "points": 2,
-          "question": null,
-          "solution": null,
-          "type": {
-            "id": 1,
-            "name": "Multiple Choice",
-            "solutionType": "checkbox"
-          }
-        }
-      ],
-      "title": "dasdsa"
-    },
-    {
-      "id": 4,
-      "purpose": "23",
-      "tasks": [],
-      "title": "Test"
     }
   ],
   "user": [

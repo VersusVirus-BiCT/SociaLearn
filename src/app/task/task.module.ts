@@ -18,7 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../core/material/material.module';
 import { QaModule } from '../qa/qa.module';
 import { TaskDialogComponent } from './entry/task-dialog/task-dialog.component';
-import {MatDialogModule} from "@angular/material/dialog";
+import {MatDialogModule} from '@angular/material/dialog';
+import { TaskgroupDialogComponent } from './entry/taskgroup-dialog/taskgroup-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     EntryComponent,
     TasksComponent,
     TaskDialogComponent,
+    TaskgroupDialogComponent,
   ],
   imports: [
     CommonModule,
