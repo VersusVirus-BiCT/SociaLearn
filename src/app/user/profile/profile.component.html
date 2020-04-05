@@ -1,17 +1,61 @@
-<header>
-  <div class="title">
-    <div class="profile-header">
+<article>
+  <header>
+    <div class="title">
+      <div class="profile-header">
         <h1>Profile</h1>
-        <h4>User Account</h4>
+        <h4>{{user.username}}</h4>
+      </div>
     </div>
+  </header>
+
+  <div class="row">
+    <section class="profile-img-section">
+      <mat-icon class="profile-img">account_circle</mat-icon>
+    </section>
+    <section class="experience-section">
+      <mat-card>
+        <mat-card-content>
+          <div class="experience-bar">
+            <span class="level">{{user.karma.level}}</span>
+            <span class="bar">
+              <span class="label">{{user.karma.experience}} / {{ user.karma.maxExperience }}</span>
+              <span class="bar-background"></span>
+              <span class="bar-foreground" [style.width]="getExperiencePercentage(user) + '%'"></span>
+            </span>
+            <span class="level">{{user.karma.level + 1}}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
   </div>
-</header>
 
-<br>
+  <!-- <mat-card>
+    <mat-card-header>
+      <h2>Tasks</h2>
+    </mat-card-header>
+    <mat-card-content>
 
-<div class="profile-information">
+    </mat-card-content>
+  </mat-card> -->
+
+  <mat-card>
+    <mat-card-header>
+      <h2>Achievements</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <ul>
+        <li *ngFor="let achievement of user.achievements">
+          {{achievement.title}}
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+</article>
+
+<!-- <div class="profile-information">
   <div class="profile-name">
-    <img src="" alt="profile-immage">
+    <mat-icon>account_box</mat-icon>
     <h4>{{user.username}}</h4>
   </div>
   <div class="profile-experience">
@@ -36,7 +80,7 @@
 
 <div class="profile-achievements">
   <h4>achievements</h4>
-</div>
+</div> -->
 
 
 <!-- <h1>Username</h1>

@@ -26,4 +26,8 @@ export class ProfileComponent implements AfterViewInit {
     }
   }
 
+  public getExperiencePercentage(user: User): number {
+    return Math.round(100 / user.karma.maxExperience * user.karma.experience);
+  }
+
 }

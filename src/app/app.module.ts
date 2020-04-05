@@ -11,7 +11,6 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgxsModule } from '@ngxs/store';
 import { UserState } from './user/state/user.state';
-import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import {MatIconModule} from '@angular/material/icon';
     TranslationModule.forRoot(),
     HttpClientModule,
     NgxsModule.forRoot([UserState]),
-    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
