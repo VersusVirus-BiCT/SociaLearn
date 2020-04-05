@@ -4,7 +4,7 @@ import { TaskTypeService } from '../service/task-type.service';
 import { TaskGroup } from '../model/task-group';
 import { TaskType } from '../model/task-type';
 import { Task } from '../model/task';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 
@@ -19,9 +19,11 @@ export class EntryComponent implements OnInit {
   public taskGroup: TaskGroup;
   public taskTypes: TaskType[];
   public lastTaskId : number;
+  public taskGroupList: TaskGroup[];
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private taskGroupService: TaskGroupService,
     taskTypeService: TaskTypeService,
     public dialog: MatDialog
@@ -29,12 +31,25 @@ export class EntryComponent implements OnInit {
     this.taskGroupId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
     taskGroupService.loadTaskGroups();
     taskTypeService.loadTaskTypes();
-    taskGroupService.taskGroups$.subscribe((taskGroups : TaskGroup[]) => {
-      this.taskGroup = taskGroups.find(tt => tt.id === this.taskGroupId);
-    });
-    taskTypeService.taskTypes$.subscribe((taskTypes: TaskType[]) => {
-      this.taskTypes = taskTypes;
-    })
+    if(this.taskGroupId) {
+      taskGroupService.taskGroups$.subscribe((taskGroups: TaskGroup[]) => {
+        this.taskGroup = taskGroups.find(tt => tt.id === this.taskGroupId);
+      });
+      taskTypeService.taskTypes$.subscribe((taskTypes: TaskType[]) => {
+        this.taskTypes = taskTypes;
+      });
+    } else {
+      taskGroupService.taskGroups$.subscribe((taskGroups: TaskGroup[]) => {
+        this.taskGroupList = taskGroups;
+        this.taskGroup = {
+          id: this.getNextId(this.taskGroupList),
+          purpose: '',
+          tasks: [],
+          title: ''
+        }
+      });
+
+    }
   }
 
   public ngOnInit(): void {
@@ -92,6 +107,11 @@ export class EntryComponent implements OnInit {
     } else {
       solution.correct = false;
     }
+  }
+
+  public addGroup(): void {
+    this.taskGroupService.createTaskGroup(this.taskGroup);
+    this.router.navigate(['/task/entry/' + this.taskGroup.id])
   }
 
   private getNextId(object: any[]): number {

@@ -37,4 +37,10 @@ export class TaskGroupService {
       o => console.log(taskGroup,o)
     );
   }
+
+  public createTaskGroup(taskGroup: TaskGroup): void{
+    this.http.post(environment.API_URL+'/taskgroup', taskGroup).subscribe(
+      o => console.log(taskGroup,o)
+    );
+  }
 }
