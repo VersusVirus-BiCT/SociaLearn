@@ -1,0 +1,48 @@
+.question {
+  border-bottom: solid 1px;
+}
+
+.material-icons {
+  font-size: 2.5em;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.height-20 {
+  height: 20px;
+}
+
+.accepted {
+  width: 35px;
+
+  span {
+    color: green;
+  }
+}
+
+.not-accepted {
+
+  span {
+    color: #d1d3e2;
+  }
+}
+
+.mat-expansion-panel-header-title{
+  width: 20px;
+}
+
+.question .material-icons{
+  color: mediumpurple;
+}
+
+.profile {
+  .material-icons{
+    color: #6d76fd;
+  }
+
+  .last-profile-icon{
+    color: #ff8f75;
+  }
+}

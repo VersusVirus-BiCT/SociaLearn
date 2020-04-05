@@ -16,6 +16,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../core/material/material.module';
+import { QaModule } from '../qa/qa.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {MaterialModule} from '../core/material/material.module';
     MatCheckboxModule,
     MatRadioModule,
     FormsModule,
+    QaModule,
     MaterialModule
   ]
 })
