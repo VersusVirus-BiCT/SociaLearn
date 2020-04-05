@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import {TaskGroup} from '../model/task-group';
 
@@ -10,159 +8,159 @@ import {TaskGroup} from '../model/task-group';
 export class TaskGroupService {
 
 
-  alltaskgroups: TaskGroup[] = [
+  public alltaskgroups: TaskGroup[] = [
     {
-      "id": 1,
-      "title": "Math",
-      "purpose": "Math Aufgaben Einfach",
-      "tasks": [
+      'id': 1,
+      'title': 'Math',
+      'purpose': 'Math Aufgaben Einfach',
+      'tasks': [
         {
-          "id": 3,
-          "name": "Subtraktion 1",
-          "description": "Löse die Subtraktion",
-          "question": "23-8",
-          "solution": "15",
-          "points": 1,
-          "type": {
-            "id": 4,
-            "name": "Text",
-            "solutionType": "text"
+          'id': 3,
+          'name': 'Subtraktion 1',
+          'description': 'Löse die Subtraktion',
+          'question': '23-8',
+          'solution': '15',
+          'points': 1,
+          'type': {
+            'id': 4,
+            'name': 'Text',
+            'solutionType': 'text'
           }
         },
         {
-          "id": 2,
-          "name": "Addition 2",
-          "description": "Löse die Addition",
-          "question": "23+7",
-          "solution": [
+          'id': 2,
+          'name': 'Addition 2',
+          'description': 'Löse die Addition',
+          'question': '23+7',
+          'solution': [
             {
-              "id": 1,
-              "value": "A",
-              "correct": true
+              'id': 1,
+              'value': 'A',
+              'correct': true
             },
             {
-              "id": 2,
-              "value": "B",
-              "correct": false
+              'id': 2,
+              'value': 'B',
+              'correct': false
             },
             {
-              "id": 3,
-              "value": "C",
-              "correct": false
+              'id': 3,
+              'value': 'C',
+              'correct': false
             }
           ],
-          "points": 1,
-          "type": {
-            "id": 2,
-            "name": "Single Choice",
-            "solutionType": "select"
+          'points': 1,
+          'type': {
+            'id': 2,
+            'name': 'Single Choice',
+            'solutionType': 'select'
           }
         },
         {
-          "id": 1,
-          "name": "Addition 1",
-          "description": "Löse die Addition",
-          "question": "5+7",
-          "solution": [
+          'id': 1,
+          'name': 'Addition 1',
+          'description': 'Löse die Addition',
+          'question': '5+7',
+          'solution': [
             {
-              "id": 1,
-              "value": "A",
-              "correct": true
+              'id': 1,
+              'value': 'A',
+              'correct': true
             },
             {
-              "id": 2,
-              "value": "B",
-              "correct": true
+              'id': 2,
+              'value': 'B',
+              'correct': true
             },
             {
-              "id": 3,
-              "value": "C",
-              "correct": false
+              'id': 3,
+              'value': 'C',
+              'correct': false
             }
           ],
-          "points": 1,
-          "type": {
-            "id": 1,
-            "name": "Multiple Choice",
-            "solutionType": "checkbox"
+          'points': 1,
+          'type': {
+            'id': 1,
+            'name': 'Multiple Choice',
+            'solutionType': 'checkbox'
           }
         }
       ]
     },
     {
-      "id": 2,
-      "title": "Java",
-      "purpose": "Java Aufgaben Einfach",
-      "tasks": [
+      'id': 2,
+      'title': 'Java',
+      'purpose': 'Java Aufgaben Einfach',
+      'tasks': [
         {
-          "id": 4,
-          "name": "Java Variablen",
-          "description": "Beantworte die Frage",
-          "question": "Was ist eine Variable",
-          "solution": "Ein Platzhalter für Werte",
-          "points": 1,
-          "type": {
-            "id": 4,
-            "name": "Text",
-            "solutionType": "text"
+          'id': 4,
+          'name': 'Java Variablen',
+          'description': 'Beantworte die Frage',
+          'question': 'Was ist eine Variable',
+          'solution': 'Ein Platzhalter für Werte',
+          'points': 1,
+          'type': {
+            'id': 4,
+            'name': 'Text',
+            'solutionType': 'text'
           }
         },
         {
-          "id": 5,
-          "name": "Java Keywords",
-          "description": "Beantworte die Frage",
-          "question": "Was bedeutet static",
-          "solution": [
+          'id': 5,
+          'name': 'Java Keywords',
+          'description': 'Beantworte die Frage',
+          'question': 'Was bedeutet static',
+          'solution': [
             {
-              "id": 1,
-              "value": "A",
-              "correct": true
+              'id': 1,
+              'value': 'A',
+              'correct': true
             },
             {
-              "id": 2,
-              "value": "B",
-              "correct": false
+              'id': 2,
+              'value': 'B',
+              'correct': false
             },
             {
-              "id": 3,
-              "value": "C",
-              "correct": false
+              'id': 3,
+              'value': 'C',
+              'correct': false
             }
           ],
-          "points": 1,
-          "type": {
-            "id": 2,
-            "name": "Single Choice Radio",
-            "solutionType": "radio"
+          'points': 1,
+          'type': {
+            'id': 2,
+            'name': 'Single Choice Radio',
+            'solutionType': 'radio'
           }
         },
         {
-          "id": 6,
-          "name": "Java Prinzipien",
-          "description": "Beantworte die Frage",
-          "question": "Wofür steht OO",
-          "solution": [
+          'id': 6,
+          'name': 'Java Prinzipien',
+          'description': 'Beantworte die Frage',
+          'question': 'Wofür steht OO',
+          'solution': [
             {
-              "id": 1,
-              "value": "A",
-              "correct": true
+              'id': 1,
+              'value': 'A',
+              'correct': true
             },
             {
-              "id": 2,
-              "value": "B",
-              "correct": false
+              'id': 2,
+              'value': 'B',
+              'correct': false
             },
             {
-              "id": 3,
-              "value": "C",
-              "correct": false
+              'id': 3,
+              'value': 'C',
+              'correct': false
             }
           ],
-          "points": 1,
-          "type": {
-            "id": 3,
-            "name": "Single Choice Select",
-            "solutionType": "select"
+          'points': 1,
+          'type': {
+            'id': 3,
+            'name': 'Single Choice Select',
+            'solutionType': 'select'
           }
         }
       ]
@@ -180,7 +178,7 @@ export class TaskGroupService {
   });
   public readonly taskGroup$: Observable<TaskGroup> = this._taskGroup.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   public loadTaskGroups(): void{
     of(this.alltaskgroups)
